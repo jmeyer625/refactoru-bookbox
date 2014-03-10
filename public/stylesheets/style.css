@@ -1,0 +1,17 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #eee;
+}
+a {
+  color: #00b7ff;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.main-img {
+  max-width: 1200px;
+}
+.ui.checkbox {
+  display: block;
+}
