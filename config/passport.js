@@ -28,7 +28,7 @@ var fbStrategy = new facebookStrategy({
 			facebookId: profile.id, 
 			username: profile.username,
 			profile: profile,
-			gender: profile.gender,
+			sex: profile.gender,
 			firstName: profile.name.givenName,
 			lastName: profile.name.familyName,
 			email: profile.emails[0].value

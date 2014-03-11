@@ -12,6 +12,7 @@ module.exports = {
 	createProfile: function (req,res) {
 		var submitted = req.body;
 		userModel.findOne({_id: req.user._id}, function(err,user){
+			console.log(user.celebs)
 			user.address = {
 				address_line_1: submitted.address_line_1,
 				address_line_2: submitted.address_line_2,
@@ -20,9 +21,15 @@ module.exports = {
 				address_zip: submitted.address_zip
 			};
 			user.birthdate = submitted.birthdate;
+			for (key in submitted.celeb) {
+				console.log(key);
+				user.celebs[key] = true;
+			}
 			
+			user.markModified('celebs');
 			user.save(function(err){
-				res.redirect('/home')
+				console.log(err);
+				res.redirect('/home');
 			})
 		});
 	}

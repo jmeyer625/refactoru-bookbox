@@ -31,14 +31,18 @@ block content
                 .ui.corner.label
                   i.icon.asterisk
         .field
-          label Gender    
+          label Sex    
             .ui.selection.dropdown
               input(type="hidden", name="gender")
-              .text Gender
+              .text #{user.sex}
               i.dropdown.icon
               .menu
-                .item(data-value="1") Male
-                .item(data-value='0') Female
+                if (user.sex === 'male')
+                  .item(data-value="male" class="active") Male
+                  .item(data-value='female') Female
+                else
+                  .item(data-value="male" class="active") Male
+                  .item(data-value='female') Female
         .field
           label D/O/B
             .ui.left.labeled.icon.input
@@ -84,67 +88,67 @@ block content
         .ui.grid
           .four.wide.column
             .ui.checkbox
-              input(type="checkbox", name="oprah_winfrey") 
+              input(type="checkbox", name="celeb[oprah_winfrey]") 
               label Oprah Winfrey
             .ui.checkbox
-              input(type="checkbox", name="bill_clinton") 
+              input(type="checkbox", name="celeb[bill_clinton]") 
               label Bill Clinton
             .ui.checkbox
-              input(type="checkbox", name="anderson_cooper") 
+              input(type="checkbox", name="celeb[anderson_cooper]") 
               label Anderson Cooper
             .ui.checkbox
-              input(type="checkbox", name="steve_jobs") 
+              input(type="checkbox", name="celeb[steve_jobs]") 
               label Steve Jobs
             .ui.checkbox
-              input(type="checkbox", name="jk_rowling") 
+              input(type="checkbox", name="celeb[jk_rowling]") 
               label J.K. Rowling
           .four.wide.column
             .ui.checkbox
-              input(type="checkbox", name="sonia_sotomayor") 
+              input(type="checkbox", name="celeb[sonia_sotomayor]") 
               label Sonia Sotomayor
             .ui.checkbox
-              input(type="checkbox", name="gwyneth_paltrow") 
+              input(type="checkbox", name="celeb[gwyneth_paltrow]") 
               label Gwyneth Paltrow
             .ui.checkbox
-              input(type="checkbox", name="mark_cuban") 
+              input(type="checkbox", name="celeb[mark_cuban]") 
               label Mark Cuban
             .ui.checkbox
-              input(type="checkbox", name="david_foster_wallace") 
+              input(type="checkbox", name="celeb[david_foster_wallace]") 
               label David Foster Wallace
             .ui.checkbox
-              input(type="checkbox", name="julia_roberts") 
+              input(type="checkbox", name="celeb[julia_roberts]") 
               label Julia Roberts
           .four.wide.column
             .ui.checkbox
-              input(type="checkbox", name="jennifer_lawrence") 
+              input(type="checkbox", name="celeb[jennifer_lawrence]") 
               label Jennifer Lawrence
             .ui.checkbox
-              input(type="checkbox", name="michelle_obama") 
+              input(type="checkbox", name="celeb[michelle_obama]") 
               label Michelle Obama
             .ui.checkbox
-              input(type="checkbox", name="tony_hawk") 
+              input(type="checkbox", name="celeb[tony_hawk]") 
               label Tony Hawk
             .ui.checkbox
-              input(type="checkbox", name="sheryl_sandberg") 
+              input(type="checkbox", name="celeb[sheryl_sandberg]") 
               label Sheryl Sandberg
             .ui.checkbox
-              input(type="checkbox", name="steve_jobs") 
+              input(type="checkbox", name="celeb[steve_jobs]") 
               label Elon Musk
           .four.wide.column
             .ui.checkbox
-              input(type="checkbox", name="jay-z") 
+              input(type="checkbox", name="celeb[jay-z]") 
               label Jay-Z
             .ui.checkbox
-              input(type="checkbox", name="malcolm_gladwell") 
+              input(type="checkbox", name="celeb[malcolm_gladwell]") 
               label Malcolm Gladwell
             .ui.checkbox
-              input(type="checkbox", name="stephenie_meyer") 
+              input(type="checkbox", name="celeb[stephenie_meyer]") 
               label Stephenie Meyer
             .ui.checkbox
-              input(type="checkbox", name="hillary_clinton") 
+              input(type="checkbox", name="celeb[hillary_clinton]") 
               label Hillary Clinton
             .ui.checkbox
-              input(type="checkbox", name="warren_buffett") 
+              input(type="checkbox", name="celeb[warren_buffett]") 
               label Warren Buffett
         .field
               a.ui.right.positive.button.next Next
