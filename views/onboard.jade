@@ -1,153 +1,153 @@
 extends layout
 
 block content
-  .indicator
-  .form-page(data-section="1")
-    .ui.form.segment
-      .two.fields
+  form(method="post", name="userform", action="/onboard/submit").indicator
+    .form-page(data-section="1")
+      .ui.form.segment
+        .two.fields
+          .field
+            label First name
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="First name", name="firstName", value="#{user.firstName}")
+                .ui.corner.label
+                  i.icon.asterisk
+          .field
+            label Last name
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="Last name", name="lastName", value="#{user.lastName}")
+                .ui.corner.label
+                  i.icon.asterisk
+        .two.fields
+          .field
+            label E-mail
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="E-mail", name="email", value="#{user.email}")
+                .ui.corner.label
+                  i.icon.asterisk
+          .field
+            label Password
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="Password", name="password")
+                .ui.corner.label
+                  i.icon.asterisk
         .field
-          label First name
+          label Gender    
+            .ui.selection.dropdown
+              input(type="hidden", name="gender")
+              .text Gender
+              i.dropdown.icon
+              .menu
+                .item(data-value="1") Male
+                .item(data-value='0') Female
+        .field
+          label D/O/B
             .ui.left.labeled.icon.input
-              input(type="text", placeholder="First name", name="firstName")
+              input(type="text", placeholder="MM/DD/YYYY", name="birthdate")
               .ui.corner.label
                 i.icon.asterisk
         .field
-          label Last name
+          label Address Line 1
             .ui.left.labeled.icon.input
-              input(type="text", placeholder="Last name", name="lastName")
-              .ui.corner.label
-                i.icon.asterisk
-      .two.fields
-        .field
-          label E-mail
-            .ui.left.labeled.icon.input
-              input(type="text", placeholder="E-mail", name="email")
+              input(type="text", placeholder="Address Line 1", name="address_line_1")
               .ui.corner.label
                 i.icon.asterisk
         .field
-          label Password
+          label Address Line 2
             .ui.left.labeled.icon.input
-              input(type="text", placeholder="Password", name="password")
+              input(type="text", placeholder="Address Line 2", name="address_line_2")
               .ui.corner.label
                 i.icon.asterisk
+        .three.fields
+          .field
+            label City
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="City", name="address_city")
+                .ui.corner.label
+                  i.icon.asterisk
+          .field
+            label State
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="State", name="address_state")
+                .ui.corner.label
+                  i.icon.asterisk
+          .field
+            label ZIP Code
+              .ui.left.labeled.icon.input
+                input(type="text", placeholder="ZIP Code", name="address_zip")
+                .ui.corner.label
+                  i.icon.asterisk
+          .field
+            button.ui.right.positive.button.next Next
+    .form-page(data-section="2")
+      .ui.form.segment
+        h2 Please select some individuals you admire from the following list.
+        .ui.grid
+          .four.wide.column
+            .ui.checkbox
+              input(type="checkbox", name="oprah_winfrey") 
+              label Oprah Winfrey
+            .ui.checkbox
+              input(type="checkbox", name="bill_clinton") 
+              label Bill Clinton
+            .ui.checkbox
+              input(type="checkbox", name="anderson_cooper") 
+              label Anderson Cooper
+            .ui.checkbox
+              input(type="checkbox", name="steve_jobs") 
+              label Steve Jobs
+            .ui.checkbox
+              input(type="checkbox", name="jk_rowling") 
+              label J.K. Rowling
+          .four.wide.column
+            .ui.checkbox
+              input(type="checkbox", name="sonia_sotomayor") 
+              label Sonia Sotomayor
+            .ui.checkbox
+              input(type="checkbox", name="gwyneth_paltrow") 
+              label Gwyneth Paltrow
+            .ui.checkbox
+              input(type="checkbox", name="mark_cuban") 
+              label Mark Cuban
+            .ui.checkbox
+              input(type="checkbox", name="david_foster_wallace") 
+              label David Foster Wallace
+            .ui.checkbox
+              input(type="checkbox", name="julia_roberts") 
+              label Julia Roberts
+          .four.wide.column
+            .ui.checkbox
+              input(type="checkbox", name="jennifer_lawrence") 
+              label Jennifer Lawrence
+            .ui.checkbox
+              input(type="checkbox", name="michelle_obama") 
+              label Michelle Obama
+            .ui.checkbox
+              input(type="checkbox", name="tony_hawk") 
+              label Tony Hawk
+            .ui.checkbox
+              input(type="checkbox", name="sheryl_sandberg") 
+              label Sheryl Sandberg
+            .ui.checkbox
+              input(type="checkbox", name="steve_jobs") 
+              label Elon Musk
+          .four.wide.column
+            .ui.checkbox
+              input(type="checkbox", name="jay-z") 
+              label Jay-Z
+            .ui.checkbox
+              input(type="checkbox", name="malcolm_gladwell") 
+              label Malcolm Gladwell
+            .ui.checkbox
+              input(type="checkbox", name="stephenie_meyer") 
+              label Stephenie Meyer
+            .ui.checkbox
+              input(type="checkbox", name="hillary_clinton") 
+              label Hillary Clinton
+            .ui.checkbox
+              input(type="checkbox", name="warren_buffett") 
+              label Warren Buffett
+        .field
+              a.ui.right.positive.button.next Next
+    .form-page(data-section='3')
       .field
-        label Gender    
-          .ui.selection.dropdown
-            input(type="hidden", name="gender")
-            .text Gender
-            i.dropdown.icon
-            .menu
-              .item(data-value="1") Male
-              .item(data-value='0') Female
-      .field
-        label D/O/B
-          .ui.left.labeled.icon.input
-            input(type="text", placeholder="MM/DD/YYYY", name="birthdate")
-            .ui.corner.label
-              i.icon.asterisk
-      .field
-        label Address Line 1
-          .ui.left.labeled.icon.input
-            input(type="text", placeholder="Address Line 1", name="address_line_1")
-            .ui.corner.label
-              i.icon.asterisk
-      .field
-        label Address Line 2
-          .ui.left.labeled.icon.input
-            input(type="text", placeholder="Address Line 2", name="address_line_2")
-            .ui.corner.label
-              i.icon.asterisk
-      .three.fields
-        .field
-          label City
-            .ui.left.labeled.icon.input
-              input(type="text", placeholder="City", name="address_city")
-              .ui.corner.label
-                i.icon.asterisk
-        .field
-          label State
-            .ui.left.labeled.icon.input
-              input(type="text", placeholder="State", name="address_state")
-              .ui.corner.label
-                i.icon.asterisk
-        .field
-          label ZIP Code
-            .ui.left.labeled.icon.input
-              input(type="text", placeholder="ZIP Code", name="address_zip")
-              .ui.corner.label
-                i.icon.asterisk
-        .field
-          button.ui.right.positive.button.next Next
-  .form-page(data-section="2")
-    .ui.form.segment
-      h2 Please select some individuals you admire from the following list.
-      .ui.grid
-        .four.wide.column
-          .ui.checkbox
-            input(type="checkbox", name="oprah_winfrey") 
-            label Oprah Winfrey
-          .ui.checkbox
-            input(type="checkbox", name="bill_clinton") 
-            label Bill Clinton
-          .ui.checkbox
-            input(type="checkbox", name="anderson_cooper") 
-            label Anderson Cooper
-          .ui.checkbox
-            input(type="checkbox", name="steve_jobs") 
-            label Steve Jobs
-          .ui.checkbox
-            input(type="checkbox", name="jk_rowling") 
-            label J.K. Rowling
-        .four.wide.column
-          .ui.checkbox
-            input(type="checkbox", name="sonia_sotomayor") 
-            label Sonia Sotomayor
-          .ui.checkbox
-            input(type="checkbox", name="gwyneth_paltrow") 
-            label Gwyneth Paltrow
-          .ui.checkbox
-            input(type="checkbox", name="mark_cuban") 
-            label Mark Cuban
-          .ui.checkbox
-            input(type="checkbox", name="david_foster_wallace") 
-            label David Foster Wallace
-          .ui.checkbox
-            input(type="checkbox", name="julia_roberts") 
-            label Julia Roberts
-        .four.wide.column
-          .ui.checkbox
-            input(type="checkbox", name="jennifer_lawrence") 
-            label Jennifer Lawrence
-          .ui.checkbox
-            input(type="checkbox", name="michelle_obama") 
-            label Michelle Obama
-          .ui.checkbox
-            input(type="checkbox", name="tony_hawk") 
-            label Tony Hawk
-          .ui.checkbox
-            input(type="checkbox", name="sheryl_sandberg") 
-            label Sheryl Sandberg
-          .ui.checkbox
-            input(type="checkbox", name="steve_jobs") 
-            label Elon Musk
-        .four.wide.column
-          .ui.checkbox
-            input(type="checkbox", name="jay-z") 
-            label Jay-Z
-          .ui.checkbox
-            input(type="checkbox", name="malcolm_gladwell") 
-            label Malcolm Gladwell
-          .ui.checkbox
-            input(type="checkbox", name="stephenie_meyer") 
-            label Stephenie Meyer
-          .ui.checkbox
-            input(type="checkbox", name="hillary_clinton") 
-            label Hillary Clinton
-          .ui.checkbox
-            input(type="checkbox", name="warren_buffett") 
-            label Warren Buffett
-      .field
-            a.ui.right.positive.button.next Next
-  .form-page(data-section='3')
-    .field
-      a(href='/profile/submit').ui.right.positive.button Submit
+        input(type="submit", value="Submit").ui.right.positive.button

@@ -19,6 +19,7 @@ var fbStrategy = new facebookStrategy({
 }, function(accessToken, refreshToken, profile, done) {
 
 	userModel.findOne({facebookId:profile.id}, function(err,user){
+		
 		if(user) {
 			return done(err, user);
 		}
@@ -28,7 +29,8 @@ var fbStrategy = new facebookStrategy({
 			username: profile.username,
 			profile: profile,
 			gender: profile.gender,
-			name: profile.displayName,
+			firstName: profile.name.givenName,
+			lastName: profile.name.familyName,
 			email: profile.emails[0].value
 		});
 		newUser.save(function(err,doc){

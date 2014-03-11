@@ -44,7 +44,15 @@ app.get('/', function (req,res){
 	res.render('index', {title:'BookBox'})
 });
 
+app.get('/home', function (req,res){
+	res.render('home', {
+		user:req.user,
+		title: 'title'
+	})
+})
+
 app.get('/onboard', userController.onboard);
+app.post('/onboard/submit', userController.createProfile);
 
 
 //Authentication routes
