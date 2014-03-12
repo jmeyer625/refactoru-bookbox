@@ -60,7 +60,8 @@ app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
 
 app.get('/seebooks', bookController.getBooks);
-app.get('/writefile', bookController.writeFile);
+app.get('/writefile', bookController.writeFiles);
+app.get('/calc', bookController.doCalc);
 
 //Authentication routes
 app.get('/facebook', passport.authenticate('facebook',{scope: ['email', 'user_birthday', 'user_likes']} ));

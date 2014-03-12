@@ -1,6 +1,8 @@
 var bookModel = require('../models/bookModel');
+var userModel = require('../models/userModel')
 var async = require('async');
 var fs = require('fs');
+var exec = require('child_process').exec;
 
 module.exports = {
 	getBooks: function(req,res) {
@@ -53,17 +55,33 @@ module.exports = {
 			res.render('books', {docs:docs});
 		})
 	},
-	writeFile: function (req,res) {
+	writeFiles: function (req,res) {
 		bookModel.find({}, function(err,docs){
 			docs = JSON.stringify(docs);
 			fs.writeFile('./tmp/test.json', docs, function(err){
 				if (err) {
 					console.log(err);
 				} else {
-					console.log('Saved!');
+					console.log('Saved books');
 				}
-				res.redirect('/');
+				userModel.find({_id:req.user._id}, function(err,user){
+					user = JSON.stringify(user);
+					fs.writeFile('./tmp/user.json', user, function(err){
+						err ? console.log(err) : console.log('Saved user');
+						res.redirect('/');
+					})
+				})
 			})
+		})
+	},
+	doCalc: function(req,res) {
+		exec('python produceRecs.py', function(err,stdout, stderr){
+			console.log('stdout: ' + stdout);
+		    console.log('stderr: ' + stderr);
+		    if (err !== null) {
+		      console.log('exec error: ' + err);
+		    }
+		    res.send(stdout);
 		})
 	}
 }

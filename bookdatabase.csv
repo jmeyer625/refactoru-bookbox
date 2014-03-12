@@ -1,7 +1,7 @@
 Title,Author,Genre 1,Genre 2,Persona 1,Persona 2,Female/Male/Both,Writing style,Length,Celebrities,ISBN
 The Goldfinch,Donna Tartt,Contemporary,Mystery,Contemporary and classic highbrow fiction,Female casual reader,Female,,784,,978-0316066437
 Young Money,Kevin Roose,Social issues,True story,Male casual reader,,Male,,336,,978-0446583251
-The Ocean at the End of the Lane,Neil Gaiman,Science fiction,,,,Both,,192,,978-0062255655
+The Ocean at the End of the Lane,Neil Gaiman,Science fiction,,Geek,Contemporary and classic highbrow fiction,Both,,192,,978-0062255655
 The Circle,Dave Eggers,Contemporary,Science fiction,Female casual reader,Contemporary and classic highbrow fiction,Female,,504,,978-0385351593
 The Everything Store: Jeff Bezos and the Age of Amazon,Brad Stone,Business,,Male casual reader,Self-improvement,Male,,384,,978-0316219266
 Lord of the Flies,William Golding,Classics,,Contemporary and classic highbrow fiction,,Both,,208,sonia_sotomayor,978-0399501487
@@ -35,18 +35,18 @@ Conscious Business: How to Build Value through Values,Fred Kofman,Business,,Self
 Discover the Power Within You: A Guide to the Unexplored Depths Within,Eric Butterworth,Self-help,,Self-improvement,,Both,,256,oprah_winfrey,978-0061723797
 A New Earth: Awakening to Your Life's Purpose,Eckhart Tolle,Self-help,,Self-improvement,,Both,,336,oprah_winfrey,978-0452289963
 The Poisonwood Bible,Barbara Kingsolver,Contemporary,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,576,oprah_winfrey; hillary_clinton,978-0061577079
-Night,Elie Wiesel,Classics,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Both,,120,oprah_winfrey,978-0374500016
-A Fine Balance,Rohinton Mistry,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,603,oprah_winfrey,978-1400030651
+Night,Elie Wiesel,Classics,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Both,,120,oprah_winfrey,978-0374500016
+A Fine Balance,Rohinton Mistry,Contemporary,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,603,oprah_winfrey,978-1400030651
 The Story of Edgar Sawtelle,David Wroblewski,Contemporary,,Contemporary and classic highbrow fiction,,Both,,608,oprah_winfrey,978-0061374234
-The Pillars of the Earth,Ken Follett,Historical Fiction,,Male casual reader,,Male,,1008,oprah_winfrey,978-0451232816
-The Bluest Eye,Toni Morrison,Classics,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,224,oprah_winfrey,978-0307278449
-The Known World,Edward P. Jones,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,,Both,,432,oprah_winfrey,978-0061159176
-The Color Purple,Alice Walker,Classics,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,300,hillary_clinton,978-0156028356
-The Clan of the Cave Bear,Jean M. Auel,Contemporary,Historical Fiction,Female casual reader,Male casual reader,Both,,495,hillary_clinton,978-0553250428
-Wild Swans: Three Daughters of China,Jung Chang,Historical Fiction,Contemporary,Contemporary and classic highbrow fiction,Female casual reader,Female,,538,hillary_clinton,978-0743246989
+The Pillars of the Earth,Ken Follett,Historical fiction,,Male casual reader,,Male,,1008,oprah_winfrey,978-0451232816
+The Bluest Eye,Toni Morrison,Classics,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,224,oprah_winfrey,978-0307278449
+The Known World,Edward P. Jones,Contemporary,Historical fiction,Contemporary and classic highbrow fiction,,Both,,432,oprah_winfrey,978-0061159176
+The Color Purple,Alice Walker,Classics,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,300,hillary_clinton,978-0156028356
+The Clan of the Cave Bear,Jean M. Auel,Contemporary,Historical fiction,Female casual reader,Male casual reader,Both,,495,hillary_clinton,978-0553250428
+Wild Swans: Three Daughters of China,Jung Chang,Historical fiction,Contemporary,Contemporary and classic highbrow fiction,Female casual reader,Female,,538,hillary_clinton,978-0743246989
 West with the Night,Beryl Markham,True story,Biography,Female casual reader,Male casual reader,Female,,293,hillary_clinton,978-0865477636
-The Joy Luck Club,Amy Tan,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,288,hillary_clinton,978-0143038092
-The Other Boleyn Girl,Philippa Gregory,Historical Fiction,,Female casual reader,,Female,,672,jennifer_lawrence,978-0743227445
+The Joy Luck Club,Amy Tan,Contemporary,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,288,hillary_clinton,978-0143038092
+The Other Boleyn Girl,Philippa Gregory,Historical fiction,,Female casual reader,,Female,,672,jennifer_lawrence,978-0743227445
 Raise High the Roof Beam; Carpenters and Seymour: An Introduction,J.D. Salinger,Classics,,Contemporary and classic highbrow fiction,,Both,,224,jennifer_lawrence,978-0316769518
 We Need to Talk About Kevin,Lionel Shriver,Contemporary,,Contemporary and classic highbrow fiction,Female casual reader,Female,,432,jennifer_lawrence,978-0062119049
 Anna Karenina,Leo Tolstoy,Classics,,Contemporary and classic highbrow fiction,,Female,,864,jennifer_lawrence,978-0143035008
@@ -78,10 +78,10 @@ Purple Cow,Seth Godin,Business,,Self-improvement,,Male,,224,jay-z,978-1591843177
 The Quiet American,Graham Greene,Classics,Historical fiction,Contemporary and classic highbrow fiction,Male casual reader,Male,,180,anderson_cooper,978-0143039020
 Extremely Loud and Incredibly Close,Jonathan Safran Foer,Contemporary,,Contemporary and classic highbrow fiction,Female casual reader,Both,,368,anderson_cooper,978-0547735023
 The Amazing Adventures of Kavalier and Clay,Michael Chabon,Contemporary,Historical fiction,Contemporary and classic highbrow fiction,Male casual reader,Male,,704,anderson_cooper,978-0812983586
-The Alienist,Caleb Carr,Historical Fiction,Mystery,Contemporary and classic highbrow fiction,,Both,,512,anderson_cooper,978-0812976144
+The Alienist,Caleb Carr,Historical fiction,Mystery,Contemporary and classic highbrow fiction,,Both,,512,anderson_cooper,978-0812976144
 A Prayer for Owen Meany,John Irving,Classics,,Contemporary and classic highbrow fiction,,Both,,640,anderson_cooper,978-0062204226
 The Innovator's Dilemma,Clayton M. Christensen,Business,,Engaging nonfiction,Self-improvement,Both,,336,malcolm_gladwell; mark_cuban; steve_jobs,978-0062060242
-Stone's Fall: A Novel,Iain Pears,Historical Fiction,Mystery,Male casual reader,,Male,,608,malcolm_gladwell,978-0385522854
+Stone's Fall: A Novel,Iain Pears,Historical fiction,Mystery,Male casual reader,,Male,,608,malcolm_gladwell,978-0385522854
 SuperFreakonomics,Steven D. Levitt,Social issues,,Engaging nonfiction,,Both,,320,malcolm_gladwell,978-0060889586
 Fooled by Randomness,Nassim Nicholas Taleb,Social issues,,Engaging nonfiction,,Both,,368,malcolm_gladwell,978-0812975215
 Jack: Straight from the Gut,Jack Welch,Biography,Business,Self-improvement,Male casual reader,Male,,496,warren_buffett,978-0446690683
