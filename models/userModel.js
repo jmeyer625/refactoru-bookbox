@@ -28,7 +28,7 @@ var userSchema = new mongoose.Schema({
 		default: populateCelebs(celebs)
 	},
 	read: [],
-	personas: [],
+	recs: [],
 	address: {},
 	complete: {
 		type: Boolean,

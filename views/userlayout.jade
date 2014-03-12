@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/semantic.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .ui.inverted.menu.teal
+      .container
+        a.item(href='/') BookBox
+        .right.menu
+          a.item(href='/home') Home
+          a.item(href='/browse') Browse
+          .item
+            a.ui.red.button(href="/logout") Log out
+    .container
+      block content
+    script(type='text/javascript' src="http://code.jquery.com/jquery-2.0.3.min.js")
+    script(type="text/javascript" src="/scripts/semantic.min.js")

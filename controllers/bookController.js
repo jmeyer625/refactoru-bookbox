@@ -1,11 +1,18 @@
 var bookModel = require('../models/bookModel');
-var userModel = require('../models/userModel')
+var userModel = require('../models/userModel');
 var async = require('async');
 var fs = require('fs');
 var exec = require('child_process').exec;
 
+var addBook = function(ISBN, user, cb) {
+	bookModel.findOne({ISBN:ISBN}, function(err,book){
+		user.recs.push(book);
+		user.save(cb);
+	})
+}
+
 module.exports = {
-	getBooks: function(req,res) {
+	addBooks: function(req,res) {
 		bookModel.find({}, function(err,docs){
 			var fArray = [];
 			var fixData = function(doc, cb) {
@@ -68,7 +75,7 @@ module.exports = {
 					user = JSON.stringify(user);
 					fs.writeFile('./tmp/user.json', user, function(err){
 						err ? console.log(err) : console.log('Saved user');
-						res.redirect('/');
+						res.redirect('/calc');
 					})
 				})
 			})
@@ -76,12 +83,27 @@ module.exports = {
 	},
 	doCalc: function(req,res) {
 		exec('python produceRecs.py', function(err,stdout, stderr){
-			console.log('stdout: ' + stdout);
-		    console.log('stderr: ' + stderr);
 		    if (err !== null) {
 		      console.log('exec error: ' + err);
 		    }
-		    res.send(stdout);
+		    var recs = JSON.parse(stdout).slice(0,4);
+		    userModel.findOne({_id:req.user._id}, function(err,user){
+		    	var lookups = [];
+		    	var results = [];
+		    	recs.map(function(rec){
+		    		lookups.push(function(cb){
+		    			addBook(rec.ISBN, user, function(err,doc){
+		    				cb(err,doc);
+		    			});
+		    		})
+		    	});
+		    	async.series(lookups, function(err, results){
+		    			console.log(err);
+		    			res.redirect('/user/'+req.user._id);
+		    		});
+		    	
+		    })
+		    
 		})
 	}
 }

@@ -12,7 +12,8 @@ var passportConfig = require('./config/passport');
 
 var authController = require('./controllers/authController');
 var userController = require('./controllers/userController');
-var bookController = require('./controllers/bookController')	
+var bookController = require('./controllers/bookController');
+var apiController = require('./controllers/apiController');	
 
 var app = express();
 
@@ -47,21 +48,22 @@ app.get('/', function (req,res){
 
 app.get('/home', function (req,res){
 	if(req.isAuthenticated()){
-		res.render('home', {
-			user:req.user,
-			title: 'title'
-		});
+		res.redirect('/user/'+req.user._id);
 	} else {
 		res.redirect('/');
 	}
 })
 
+app.get('/user/:id', userController.showPage);
+
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
 
-app.get('/seebooks', bookController.getBooks);
+app.get('/seebooks', bookController.addBooks);
 app.get('/writefile', bookController.writeFiles);
 app.get('/calc', bookController.doCalc);
+
+app.get('/picture', apiController.getBookImage)
 
 //Authentication routes
 app.get('/facebook', passport.authenticate('facebook',{scope: ['email', 'user_birthday', 'user_likes']} ));
@@ -69,6 +71,7 @@ app.get('/facebook/callback',
 	passport.authenticate('facebook', {failureRedirect: '/login'}),
 	authController.loginSuccess
 );
+app.get('/logout', authController.logout);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,0 +1,11 @@
+extends userlayout
+
+block content
+    h1 Welcome to BookBox, #{user.firstName}
+    .rec-container
+        each book in user.recs
+            .rec
+                h2.title #{book.Title}
+                p.author By #{book.Author}
+                p.length #{book.Length} pages
+                p.celebs Recommended by #{book.Celebrities}

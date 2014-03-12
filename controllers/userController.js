@@ -29,8 +29,17 @@ module.exports = {
 			user.markModified('celebs');
 			user.save(function(err){
 				console.log(err);
-				res.redirect('/home');
+				res.redirect('/writefile');
 			});
 		});
+	},
+	showPage: function(req,res) {
+		userModel.findOne({_id:req.user._id}, function(err,user){
+			console.log(user);
+			res.render('userpage', {
+				user: user,
+				title: 'BookBox | ' + user.firstName + ' ' + user.lastName
+			});
+		})
 	}
 }
