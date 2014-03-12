@@ -11,7 +11,8 @@ var passport = require('passport');
 var passportConfig = require('./config/passport');
 
 var authController = require('./controllers/authController');
-var userController = require('./controllers/userController');	
+var userController = require('./controllers/userController');
+var bookController = require('./controllers/bookController')	
 
 var app = express();
 
@@ -45,15 +46,21 @@ app.get('/', function (req,res){
 });
 
 app.get('/home', function (req,res){
-	res.render('home', {
-		user:req.user,
-		title: 'title'
-	})
+	if(req.isAuthenticated()){
+		res.render('home', {
+			user:req.user,
+			title: 'title'
+		});
+	} else {
+		res.redirect('/');
+	}
 })
 
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
 
+app.get('/seebooks', bookController.showBooks);
+app.get('/writefile', bookController.writeFile);
 
 //Authentication routes
 app.get('/facebook', passport.authenticate('facebook',{scope: ['email', 'user_birthday', 'user_likes']} ));

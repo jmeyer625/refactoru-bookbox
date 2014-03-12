@@ -30,7 +30,7 @@ module.exports = {
 			user.save(function(err){
 				console.log(err);
 				res.redirect('/home');
-			})
+			});
 		});
 	}
 }

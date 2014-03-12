@@ -18,14 +18,14 @@ Chéri,Colette,Classics,,Contemporary and classic highbrow fiction,,Female,,320,
 Neverwhere,Neil Gaiman,Contemporary,Fantasy,Male casual reader,Geek,Male,,400,stephenie_meyer,978-0060557812
 Pride and Prejudice,Jane Austen,Classics,Romance,Contemporary and classic highbrow fiction,Female casual reader,Female,,258,stephenie_meyer,978-1494404772
 Rebecca,Daphne du Maurier,Classics,Romance,Contemporary and classic highbrow fiction,Female casual reader,Female,,416,stephenie_meyer,978-0380730407
-Jane Eyre,Charlotte Bronte,Classics,Romance,Contemporary and classic highbrow fiction,Female casual reader,Female,,328,"stephenie_meyer, gwyneth_paltrow",978-1604594119
+Jane Eyre,Charlotte Bronte,Classics,Romance,Contemporary and classic highbrow fiction,Female casual reader,Female,,328,stephenie_meyer; gwyneth_paltrow,978-1604594119
 The Princess Bride,William Goldman,Classics,Fantasy,Female casual reader,Geek,Female,,512,stephenie_meyer,978-0156035217
-Little Women,Louisa May Alcott,Classics,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,560,"stephenie_meyer, hillary_clinton",978-0553212754
+Little Women,Louisa May Alcott,Classics,Historical fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,560,stephenie_meyer; hillary_clinton,978-0553212754
 Dragonflight,Anne McCaffrey,Fantasy,Science Fiction,Geek,,Female,,320,stephenie_meyer,978-0345335463
-East of Eden,John Steinbeck,Classics,Historical fiction,Contemporary and classic highbrow fiction,,Both,,601,"stephenie_meyer, oprah_winfrey",978-0142000656
+East of Eden,John Steinbeck,Classics,Historical fiction,Contemporary and classic highbrow fiction,,Both,,601,stephenie_meyer; oprah_winfrey,978-0142000656
 Speaker for the Dead,Orson Scott Card,Science fiction,,Male casual reader,,Male,,416,stephenie_meyer,978-0812550757
 Bossypants,Tina Fey,Biography,Humor,Female casual reader,,Female,,272,sheryl_sandberg,978-0316056892
-"Now, Discover Your Strengths",Donald O. Clifton,Business,,Self-improvement,,Both,,272,sheryl_sandberg,978-0743201148
+Now; Discover Your Strengths,Donald O. Clifton,Business,,Self-improvement,,Both,,272,sheryl_sandberg,978-0743201148
 The Lean Startup,Eric Ries,Business,,Self-improvement,,Both,,336,sheryl_sandberg,978-0307887894
 The Big Short,Michael Lewis,True story,,Male casual reader,,Male,,291,sheryl_sandberg,978-0393338829
 Home Game: An Accidental Guide to Fatherhood,Michael Lewis,Parenting,,Self-improvement,,Male,,190,sheryl_sandberg,978-0393338096
@@ -34,7 +34,7 @@ Queen of Fashion: What Marie Antoinette Wore to the Revolution,Caroline Weber,Hi
 Conscious Business: How to Build Value through Values,Fred Kofman,Business,,Self-improvement,,Male,,360,sheryl_sandberg,978-1622032020
 Discover the Power Within You: A Guide to the Unexplored Depths Within,Eric Butterworth,Self-help,,Self-improvement,,Both,,256,oprah_winfrey,978-0061723797
 A New Earth: Awakening to Your Life's Purpose,Eckhart Tolle,Self-help,,Self-improvement,,Both,,336,oprah_winfrey,978-0452289963
-The Poisonwood Bible,Barbara Kingsolver,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,576,"oprah_winfrey, hillary_clinton",978-0061577079
+The Poisonwood Bible,Barbara Kingsolver,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,576,oprah_winfrey; hillary_clinton,978-0061577079
 Night,Elie Wiesel,Classics,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Both,,120,oprah_winfrey,978-0374500016
 A Fine Balance,Rohinton Mistry,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,603,oprah_winfrey,978-1400030651
 The Story of Edgar Sawtelle,David Wroblewski,Contemporary,,Contemporary and classic highbrow fiction,,Both,,608,oprah_winfrey,978-0061374234
@@ -47,7 +47,7 @@ Wild Swans: Three Daughters of China,Jung Chang,Historical Fiction,Contemporary,
 West with the Night,Beryl Markham,True story,Biography,Female casual reader,Male casual reader,Female,,293,hillary_clinton,978-0865477636
 The Joy Luck Club,Amy Tan,Contemporary,Historical Fiction,Contemporary and classic highbrow fiction,Female casual reader,Female,,288,hillary_clinton,978-0143038092
 The Other Boleyn Girl,Philippa Gregory,Historical Fiction,,Female casual reader,,Female,,672,jennifer_lawrence,978-0743227445
-"Raise High the Roof Beam, Carpenters and Seymour: An Introduction",J.D. Salinger,Classics,,Contemporary and classic highbrow fiction,,Both,,224,jennifer_lawrence,978-0316769518
+Raise High the Roof Beam; Carpenters and Seymour: An Introduction,J.D. Salinger,Classics,,Contemporary and classic highbrow fiction,,Both,,224,jennifer_lawrence,978-0316769518
 We Need to Talk About Kevin,Lionel Shriver,Contemporary,,Contemporary and classic highbrow fiction,Female casual reader,Female,,432,jennifer_lawrence,978-0062119049
 Anna Karenina,Leo Tolstoy,Classics,,Contemporary and classic highbrow fiction,,Female,,864,jennifer_lawrence,978-0143035008
 The Rum Diary,Hunter S. Thompson,Classics,,Contemporary and classic highbrow fiction,,Male,,224,jennifer_lawrence,978-1451659719
@@ -60,7 +60,7 @@ The Red Tent,Anita Diamant,Contemporary,Historical fiction,Contemporary and clas
 The Heart is a Lonely Hunter,Carson McCullers,Classics,Historical fiction,Contemporary and classic highbrow fiction,,Both,,368,julia_roberts,978-0618526413
 The Hitchhiker's Guide to the Galaxy,Douglas Adams,Contemporary,Science fiction,Geek,Male casual reader,Male,,224,elon_musk,978-0345391803
 The Lord of the Rings,J.R.R. Tolkien,Classics,Fantasy,Geek,Male casual reader,Male,,1178,elon_musk,978-0618640157
-Foundation,Isaac Asimov,Science fiction,,Geek,Contemporary and classic highbrow fiction,Male,,320,"elon_musk, sonia_sotomayor",978-0553293357
+Foundation,Isaac Asimov,Science fiction,,Geek,Contemporary and classic highbrow fiction,Male,,320,elon_musk; sonia_sotomayor,978-0553293357
 The Moon is a Harsh Mistress,Robert A. Heinlein,Science fiction,Classics,Geek,Contemporary and classic highbrow fiction,Male,,384,elon_musk,978-0312863555
 Stranger in a Strange Land,Robert A. Heinlein,Classics,Science fiction,Geek,Contemporary and classic highbrow fiction,Male,,528,elon_musk,978-0441788385
 Structures: Or Why Things Don't Fall Down,J.E. Gordon,Engaging nonfiction,,Geek,Male casual reader,Male,,424,elon_musk,978-0306812835
@@ -80,7 +80,7 @@ Extremely Loud and Incredibly Close,Jonathan Safran Foer,Contemporary,,Contempor
 The Amazing Adventures of Kavalier and Clay,Michael Chabon,Contemporary,Historical fiction,Contemporary and classic highbrow fiction,Male casual reader,Male,,704,anderson_cooper,978-0812983586
 The Alienist,Caleb Carr,Historical Fiction,Mystery,Contemporary and classic highbrow fiction,,Both,,512,anderson_cooper,978-0812976144
 A Prayer for Owen Meany,John Irving,Classics,,Contemporary and classic highbrow fiction,,Both,,640,anderson_cooper,978-0062204226
-The Innovator's Dilemma,Clayton M. Christensen,Business,,Engaging nonfiction,Self-improvement,Both,,336,"malcolm_gladwell, mark_cuban, steve_jobs",978-0062060242
+The Innovator's Dilemma,Clayton M. Christensen,Business,,Engaging nonfiction,Self-improvement,Both,,336,malcolm_gladwell; mark_cuban; steve_jobs,978-0062060242
 Stone's Fall: A Novel,Iain Pears,Historical Fiction,Mystery,Male casual reader,,Male,,608,malcolm_gladwell,978-0385522854
 SuperFreakonomics,Steven D. Levitt,Social issues,,Engaging nonfiction,,Both,,320,malcolm_gladwell,978-0060889586
 Fooled by Randomness,Nassim Nicholas Taleb,Social issues,,Engaging nonfiction,,Both,,368,malcolm_gladwell,978-0812975215
@@ -112,9 +112,9 @@ The Only Investment Guide You'll Ever Need,Andrew Tobias,Business,,Self-improvem
 Cold Calling Techniques (That Really Work!),Stephen Schiffman,Business,,Self-improvement,,Male,,160,mark_cuban,978-1440572173
 Atlas Shrugged,Ayn Rand,Classics,,Contemporary and classic highbrow fiction,,Both,,1200,steve_jobs,978-0452011878
 Be Here Now,Ram Dass,Self-help,Biography,Self-improvement,Male casual reader,Both,,416,steve_jobs,978-0517543054
-"Zen Mind, Beginner's Mind",Shunryu Suzuki,Self-help,,Self-improvement,,Both,,176,steve_jobs,978-1590308493
+Zen Mind; Beginner's Mind,Shunryu Suzuki,Self-help,,Self-improvement,,Both,,176,steve_jobs,978-1590308493
 The Autobiography of a Yogi,Paramhansa Yogananda,Self-help,Biography,Self-improvement,Female casual reader,Female,,604,steve_jobs,978-0876120798
 Diet for a Small Planet,Frances Moore Lappa,Health,Self-help,Self-improvement,Female casual reader,Female,,528,steve_jobs,978-0345321206
-"Inside the Tornado: Strategies for Developing, Leveraging, and Surviving Hypergrowth Markets",Geoffrey A. Moore,Business,,Self-improvement,,Both,,272,steve_jobs,978-0060745813
+Inside the Tornado: Strategies for Developing; Leveraging; and Surviving Hypergrowth Markets,Geoffrey A. Moore,Business,,Self-improvement,,Both,,272,steve_jobs,978-0060745813
 Cutting Through Spiritual Materialism,Chogyam Trungpa,Self-help,Social issues,Self-improvement,,Both,,256,steve_jobs,978-1570629570
 Only the Paranoid Survive: How to Exploit the Crisis Points that Challenge Every Company,Andrew S. Grove,Business,,Self-improvement,,Both,,240,steve_jobs,978-0385483827

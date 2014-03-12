@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	- for (var i = 0; i<docs.length; i++)
+		h2 #{docs[i].title}
+		h3 By #{docs[i].author}
+		p #{docs[i].length} pages
