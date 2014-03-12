@@ -59,7 +59,7 @@ app.get('/home', function (req,res){
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
 
-app.get('/seebooks', bookController.showBooks);
+app.get('/seebooks', bookController.getBooks);
 app.get('/writefile', bookController.writeFile);
 
 //Authentication routes
