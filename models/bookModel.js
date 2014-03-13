@@ -27,7 +27,8 @@ var bookSchema = new mongoose.Schema({
 	},
 	gender: String,
 	length: Number,
-	ISBN: String
+	ISBN: String,
+	picture: String
 })
 
 module.exports = mongoose.model('book', bookSchema);

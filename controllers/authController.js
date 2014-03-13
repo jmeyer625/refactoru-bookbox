@@ -1,3 +1,5 @@
+
+
 module.exports = {
 	login: function (req,res) {
 		if(req.isAuthenticated()){
@@ -11,8 +13,8 @@ module.exports = {
 		res.redirect('/');
 	},
 	loginSuccess: function (req, res) {
-		if (req.user.complete) {
-			res.redirect('/');
+		if (req.user.saved) {
+			res.redirect('/home');
 		} else {
 			res.redirect('/onboard');
 		}

@@ -15,6 +15,8 @@ books['self_improvement'] = 0
 books['geek'] = 0
 books['engaging_nonfiction'] = 0
 books['poetry_phil_drama'] = 0
+books['academic'] = 0
+user['academic'] = 0
 user['female_casual'] = 0
 user['male_casual'] = 0
 user['highbrow'] = 0
@@ -30,32 +32,34 @@ persona_map = {'Female casual reader': ['Chick lit', 'Contemporary', 'Mystery', 
     'Self-improvement': ['Self-help', 'Business'],
     'Geek': ['Science fiction', 'Fantasy'],
     'Engaging nonfiction': ['Science', 'Social issues', 'Politics'],
-    'Poetry/philosophy/drama': ['Poetry', 'Philosophy', 'Drama']}
+    'Poetry/philosophy/drama': ['Poetry', 'Philosophy', 'Drama'],
+    'Academic': ['Politics', 'Social issues', 'Academic', 'Contemporary', 'Classics', 'History', 'Science']}
 
-celeb_map = {'sonia_sotomayor': ['Female casual reader', 'Contemporary and classic highbrow fiction', 'Geek'],
+celeb_map = {'sonia_sotomayor': ['Contemporary and classic highbrow fiction', 'Geek'],
     'bill_clinton': ['Male casual reader', 'Self-improvement', 'Contemporary and classic highbrow fiction', 'Engaging nonfiction'],
-    'elon_musk': ['Male casual reader', 'Geek'],
+    'elon_musk': ['Self-improvement', 'Geek'],
     'mark_cuban': ['Male casual reader', 'Self-improvement'],
     'julia_roberts': ['Female casual reader', 'Contemporary and classic highbrow fiction'],
-    'gwyneth_paltrow': ['Female casual reader', 'Contemporary and classic highbrow fiction'],
+    'gwyneth_paltrow': ['Contemporary and classic highbrow fiction'],
     'hillary_clinton': ['Female casual reader', 'Contemporary and classic highbrow fiction', 'Engaging nonfiction'],
     'steve_jobs': ['Male casual reader', 'Self-improvement', 'Geek'],
     'warren_buffett': ['Male casual reader', 'Self-improvement'],
     'jay-z': ['Male casual reader', 'Self-improvement'],
     'michelle_obama': ['Female casual reader', 'Contemporary and classic highbrow fiction'],
     'oprah_winfrey': ['Female casual reader', 'Contemporary and classic highbrow fiction', 'Self-improvement'],
-    'anderson_cooper': ['Male casual reader', 'Contemporary and classic highbrow fiction'],
+    'anderson_cooper': ['Male casual reader', 'Contemporary and classic highbrow fiction', 'Academic'],
     'jk_rowling': ['Female casual reader', 'Contemporary and classic highbrow fiction', 'Geek'],
-    'david_foster_wallace': ['Contemporary and classic highbrow fiction'],
+    'david_foster_wallace': ['Contemporary and classic highbrow fiction', 'Academic'],
     'jennifer_lawrence': ['Female casual reader', 'Contemporary and classic highbrow fiction'],
     'tony_hawk': ['Male casual reader'],
-    'sheryl_sandberg': ['Female casual reader', 'Self-improvement', 'Engaging nonfiction'],
+    'sheryl_sandberg': ['Self-improvement', 'Engaging nonfiction'],
     'malcolm_gladwell': ['Male casual reader', 'Self-improvement', 'Engaging nonfiction'],
     'stephenie_meyer': ['Female casual reader', 'Contemporary and classic highbrow fiction']}
 
 genre_map = {'Chick lit': ['Female casual reader'],
+    'Academic': ['Academic'],
     'Christian': ['Female casual reader'],
-    'Contemporary': ['Female casual reader', 'Male casual reader', 'Contemporary and classic highbrow fiction'],
+    'Contemporary': ['Academic', 'Female casual reader', 'Male casual reader', 'Contemporary and classic highbrow fiction'],
     'Mystery': ['Female casual reader', 'Male casual reader'],
     'Romance': ['Female casual reader'],
     'Biography': ['Male casual reader', 'Female casual reader'],
@@ -64,19 +68,19 @@ genre_map = {'Chick lit': ['Female casual reader'],
     'Humor': ['Female casual reader', 'Male casual reader'],
     'Crime': ['Male casual reader'],
     'Health': ['Female casual reader'],
-    'History': ['Engaging nonfiction'],
+    'History': ['Academic', 'Engaging nonfiction'],
     'Horror': ['Male casual reader'],
     'Science fiction': ['Male casual reader', 'Geek'],
     'Sports': ['Male casual reader'],
     'Thriller': ['Female casual reader', 'Male casual reader'],
     'Business': ['Male casual reader', 'Self-improvement'],
-    'Classics': ['Contemporary and classic highbrow fiction'],
+    'Classics': ['Academic', 'Contemporary and classic highbrow fiction'],
     'Self-help': ['Self-improvement'],
     'Parenting': ['Self-improvement'],
     'Fantasy': ['Geek'],
-    'Science': ['Engaging nonfiction'],
-    'Social issues': ['Engaging nonfiction'],
-    'Politics': ['Engaging nonfiction'],
+    'Science': ['Academic', 'Engaging nonfiction'],
+    'Social issues': ['Academic', 'Engaging nonfiction'],
+    'Politics': ['Academic', 'Engaging nonfiction'],
     'Suspense': ['Female casual reader', 'Male casual reader'],
     'Western': ['Male casual reader']}
 
@@ -86,7 +90,17 @@ score_map = {'Female casual reader': 'female_casual',
     'Self-improvement': 'self_improvement',
     'Geek': 'geek',
     'Engaging nonfiction': 'engaging_nonfiction',
-    'Poetry/philosophy/drama': 'poetry_phil_drama'}
+    'Poetry/philosophy/drama': 'poetry_phil_drama',
+    'Academic': 'academic'}
+
+passageMap = {'The Silmarillion': ['Geek'],
+    'A Collection of Essays': ['Contemporary and classic highbrow fiction', 'Engaging nonfiction', 'Poetry/philosophy/drama'],
+    'Nudge': ['Self-improvement', 'Engaging nonfiction'],
+    'The Structure of Scientific Revolutions': ['Geek', 'Engaging nonfiction', 'Academic', 'Poetry/philosophy/drama'],
+    'The 4-Hour Workweek': ['Self-improvement', 'Male casual reader'],
+    'What Ever Angel Investor Wants You to Know': ['Self-improvement', 'Male casual reader'],
+    'A Meeting by the River': ['Contemporary and classic highbrow fiction', 'Female casual reader'],
+    'Life in a Jar: The Irena Sendler Project': ['Female casual reader', 'Male casual reader'] }
 
 personas = ['female_casual', 'male_casual', 'highbrow', 'self_improvement', 'geek', 'engaging_nonfiction', 'poetry_phil_drama']
 
@@ -135,6 +149,16 @@ def calcUserCelebPersonas(user):
                     personaKey = score_map[persona]
                     user[personaKey][0] = user[personaKey][0] + 1
 
+def calcUserPassagePersonas(user):
+    if user['passages'][0]:
+        passages = user['passages'][0]
+        for passage, val in passages.items():
+            if val == True:
+                personas = passageMap[passage]
+                for persona in personas:
+                    personaKey = score_map[persona]
+                    user[personaKey][0] = user[personaKey][0] + 1
+
 def userBookScore(user, books):
     userScore = []
     books['userScore'] = 0
@@ -153,6 +177,7 @@ def run(user,books):
     calcBookPersonas(books)
     calcCelebPersonas(books)
     calcUserCelebPersonas(user)
+    calcUserPassagePersonas(user)
     userBookScore(user,books)
     books = books.sort('userScore')
     print books[['ISBN','userScore','Title']].to_json(orient="records")

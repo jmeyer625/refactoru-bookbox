@@ -86,6 +86,7 @@ module.exports = {
 		    if (err !== null) {
 		      console.log('exec error: ' + err);
 		    }
+		    console.log(JSON.parse(stdout));
 		    var recs = JSON.parse(stdout).slice(0,4);
 		    userModel.findOne({_id:req.user._id}, function(err,user){
 		    	var lookups = [];

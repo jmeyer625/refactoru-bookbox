@@ -1,9 +1,13 @@
-extends layout
+extends userlayout
 
 block content
   form(method="post", name="userform", action="/onboard/submit").indicator
     .form-page(data-section="1")
+      
       .ui.form.segment
+        .field.form-buttons
+          a.ui.positive.button.prev Previous
+          a.ui.positive.button.next Next
         .two.fields
           .field
             label First name
@@ -80,10 +84,13 @@ block content
                 input(type="text", placeholder="ZIP Code", name="address_zip")
                 .ui.corner.label
                   i.icon.asterisk
-          .field
-            button.ui.right.positive.button.next Next
+        
     .form-page(data-section="2")
-      .ui.form.segment
+      
+      .ui.form.segment 
+        .field.form-buttons
+              a.ui.positive.button.prev Previous
+              a.ui.positive.button.next Next
         h2 Please select some individuals you admire from the following list.
         .ui.grid
           .four.wide.column
@@ -150,8 +157,21 @@ block content
             .ui.checkbox
               input(type="checkbox", name="celeb[warren_buffett]") 
               label Warren Buffett
-        .field
-              a.ui.right.positive.button.next Next
+        
     .form-page(data-section='3')
-      .field
-        input(type="submit", value="Submit").ui.right.positive.button
+      -for (var i=0; i<passages.length; i++)
+        .ui.form.segment.passage-div(data-passage='#{i}')
+          .field.form-buttons
+              .ui.prev-passage.button.positive Previous
+              if i < passages.length - 1
+                .ui.next-passage.button.positive Next
+              if i === passages.length - 1
+                input(type="submit", value="Submit").ui.right.orange.button
+          p #{passages[i].passage}
+          .form-buttons
+            p.pre I don't like this
+            .ui.slider.checkbox
+              input(type="checkbox", name="passages[#{passages[i].title}]")
+              label I like this
+block pagescripts
+  script(src='/scripts/form.js')            

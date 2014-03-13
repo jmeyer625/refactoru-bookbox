@@ -1,6 +1,9 @@
 extends layout
 
 block content
-  img.main-img(src="/images/tatteredbooks.jpg")
-  h1= title
-  p Welcome to #{title}
+  h1.main-title= title
+  p.tag-line The right book can change your life. Let us help you find it.
+  .ui.buttons
+      a.ui.teal.button(href="/facebook") Sign in with Facebook
+      .or
+      a.ui.black.button(href="/onboard") Create new account

@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var passages = require('../config/bookpassages');
 
 var celebs = ['oprah_winfrey', 'bill_clinton', 'anderson_cooper', 'steve_jobs', 'jk_rowling', 'sonia_sotomayor', 'gwyneth_paltrow', 'mark_cuban', 'david_foster_wallace', 'julia_roberts', 'jennifer_lawrence', 'michelle_obama', 'tony_hawk', 'sheryl_sandberg', 'steve_jobs', 'jay-z', 'malcolm_gladwell', 'stephenie_meyer', 'hillary_clinton', 'warren_buffett'];
 
@@ -7,6 +8,14 @@ var populateCelebs = function(celebs) {
 	var celebMap = celebs.map(function(celeb){
 		returnObj[celeb] = false;
 	});
+	return returnObj
+}
+
+var populatePassages = function(passages) {
+	var returnObj = {};
+	var passagesMap = passages.passages.map(function(passage){
+		returnObj[passage.title] = false;
+	})
 	return returnObj
 }
 
@@ -33,6 +42,14 @@ var userSchema = new mongoose.Schema({
 	complete: {
 		type: Boolean,
 		default: false
+	},
+	saved: {
+		type: Boolean,
+		default: false
+	},
+	passages: {
+		type: {},
+		default: populatePassages(passages)
 	}
 });
 

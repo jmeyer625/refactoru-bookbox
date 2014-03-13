@@ -6,6 +6,10 @@ block content
         each book in user.recs
             .rec
                 h2.title #{book.Title}
+                if book.picture
+                    img(src="#{book.picture}").cover-img
+                else
+                    img(src="/images/notfound.jpg").cover-img
                 p.author By #{book.Author}
-                p.length #{book.Length} pages
-                p.celebs Recommended by #{book.Celebrities}
+block pagescripts
+    script(src="/scripts/userpage.js")
