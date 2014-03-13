@@ -2,6 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   background-color: #eee;
+  min-height: 900px;
 }
 a {
   color: #00b7ff;
@@ -13,6 +14,7 @@ a {
 .landing-img {
   background-image: url("/images/tatteredbooks.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .main-img {
   max-width: 1200px;
@@ -22,7 +24,7 @@ a {
 }
 .tag-line {
   font-size: 60px;
-  width: 70%;
+  width: 50%;
 }
 .ui.checkbox {
   display: block;
