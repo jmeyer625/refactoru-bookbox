@@ -21,7 +21,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.favicon());
+app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -62,6 +62,7 @@ app.post('/onboard/submit', userController.createProfile);
 app.get('/seebooks', bookController.addBooks);
 app.get('/writefile', bookController.writeFiles);
 app.get('/calc', bookController.doCalc);
+app.get('/browse', bookController.list);
 
 app.get('/picture', apiController.getBookImage)
 

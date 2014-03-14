@@ -3,7 +3,8 @@ extends userlayout
 block content
   form(method="post", name="userform", action="/onboard/submit").indicator
     .form-page(data-section="1")
-      
+      .ui.modal
+        p Please fill out the form correctly.
       .ui.form.segment
         .field.form-buttons
           a.ui.positive.button.prev Previous
@@ -37,7 +38,7 @@ block content
         .field
           label Sex    
             .ui.selection.dropdown
-              input(type="hidden", name="gender")
+              input(type="hidden", name="gender", value="#{user.sex}")
               .text #{user.sex}
               i.dropdown.icon
               .menu
@@ -45,8 +46,8 @@ block content
                   .item(data-value="male" class="active") Male
                   .item(data-value='female') Female
                 else
-                  .item(data-value="male" class="active") Male
-                  .item(data-value='female') Female
+                  .item(data-value="male") Male
+                  .item(data-value='female' class="active") Female
         .field
           label D/O/B
             .ui.left.labeled.icon.input

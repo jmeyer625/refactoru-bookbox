@@ -21,14 +21,47 @@ a
   width: 50%
 .ui.checkbox
   display: block
+.modal
+  p
+    color: red
+    margin-left: 20px
 .rec
   display: none
   background-color: white
   border-radius: 5px
-  margin: 20px
-  padding: 10px 50px
+  padding: 10px 20px
+  margin: 10px
+  max-width: 20%
+  text-align: center
+  position: relative
+.rec-hover
+  width: 100%
+  height: 100%
+  border-radius: 5px
+  background-color: rgba(0,0,0,0.5)
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  text-align: center
+  a.button.positive, a.button.negative
+    opacity: 1
+    margin-top: 50%
+    i
+      margin: 0
+  a.button.positive
+    margin-right: 10px
+.title
+  font-size: 16px
+.img-div
+  width: 180px
+  display: inline-block
 .cover-img
-  height: 200px
+  max-height: 200px
+  display: inline-block
+.book-info
+  display: inline-block
+  padding-left: 20px
 .passage-div
   display: none
   font-size: 18px
@@ -59,3 +92,8 @@ a
   min-height: 30px
 .pre
   display: inline
+  color: #888
+  margin-right: 20px
+.pre:hover
+  color: #444
+  cursor: pointer

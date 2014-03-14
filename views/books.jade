@@ -1,7 +1,19 @@
-extends layout
+extends userlayout
 
 block content
-	- for (var i = 0; i<docs.length; i++)
-		h2 #{docs[i].title}
-		h3 By #{docs[i].author}
-		p #{docs[i].length} pages
+    .masonry
+        - for (var i = 0; i<docs.length; i++)
+            .rec
+                .img-div
+                    if docs[i].picture
+                        img(src="#{docs[i].picture}").cover-img
+                    else
+                        img(src="/images/notfound.jpg").cover-img
+                .book-info
+                    h2.title #{docs[i].title}
+                    h3 By #{docs[i].author}
+                    p #{docs[i].length} pages
+block pagescripts
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js")    
+    script(src="/scripts/bookpage.js")

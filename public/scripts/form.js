@@ -1,15 +1,49 @@
 $(function(){
+	var validateForm = function(form) {
+		var reGoodDate = /^(?:(0[1-9]|1[012])[\/.](0[1-9]|[12][0-9]|3[01])[\/.](19|20)[0-9]{2})$/;
+		var condition = true
+		var inputNames = ['firstName', 'lastName', 'email', 'password', 'gender', 'birthdate', 'address_line_1', 'address_state', 'address_city', 'address_zip'];
+		var inputs = form.find('input');
+		inputs.each(function(i, el){
+			if (!$(el).val()) {
+				return condition = false
+			}
+			if ($(el).attr('name') === 'birthdate') {
+				if (!reGoodDate.test($(el).val())) {
+					return condition = false
+				}
+			} else {
+				console.log('got here')
+			}
+		})
+		return condition
+	}
+
 	$('.ui.selection.dropdown')
   		.dropdown();
   	$('.ui.checkbox')
-	  .checkbox()
-	;
+	  .checkbox();
+	$(document).on('click','.pre', function(){
+		$(this).next().trigger('click');
+	})
+
 
 	$('.form-page').hide();
 	$('.form-page[data-section=1]').show();
 
 	$(document).on('click', '.next', function(e){
 		e.preventDefault();
+		var form = $(this).closest('.form-page');
+		console.log('test form')
+		if (form.attr('data-section')==='1') {
+			console.log('test 1')
+			if (!validateForm(form)){
+				console.log('test 3')
+				$('.modal').modal('show');
+				console.log('hello')
+				return false
+			}
+		}
 		var thisForm = $(this).closest('.form-page');
 		thisForm.animate({'right':'2000px'}, 400, function(){
 			thisForm.hide()
@@ -87,7 +121,9 @@ $(function(){
 			}
 		});
 	});
+	
 
+	
 });
 
 
