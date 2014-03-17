@@ -158,6 +158,23 @@ def calcUserPassagePersonas(user):
                 for persona in personas:
                     personaKey = score_map[persona]
                     user[personaKey][0] = user[personaKey][0] + 1
+                
+
+def normalizeScores(rec):
+    personaList = []
+    for persona in personas:
+        personaList.append(rec[persona][0])
+    for persona in personas:
+        rec[persona][0] = rec[persona][0]/max(personaList)
+
+def normalizeBooks(books):
+    for i in range(len(books.index)):
+        book = books[i:i+1]
+        personaList = []
+        for persona in personas:
+            personaList.append(book[persona][i])
+        for persona in personas:
+            book[persona][i] = book[persona][i]/max(personaList)
 
 def userBookScore(user, books):
     userScore = []
@@ -178,6 +195,8 @@ def run(user,books):
     calcCelebPersonas(books)
     calcUserCelebPersonas(user)
     calcUserPassagePersonas(user)
+    normalizeScores(user)
+    normalizeBooks(books)
     userBookScore(user,books)
     books = books.sort('userScore')
     print books[['ISBN','userScore','Title']].to_json(orient="records")

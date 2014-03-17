@@ -56,5 +56,52 @@ module.exports = {
 			}
 			
 		})
+	},
+	addLike: function(req,res) {
+		var bookId = req.body.bookId;
+		userModel.findOne({_id:req.user._id}, function(err,user){
+			if (user.likes.indexOf(bookId) === -1) {
+				user.likes.push(bookId);
+				user.markModified('likes');
+				user.save(function(err){
+					if (err) console.log(err);
+					res.send('Saved!');
+				});
+			} else {
+				res.send('Already saved');
+			}
+			
+		});
+	},
+	addDislike: function(req,res) {
+		var bookId = req.body.bookId;
+		userModel.findOne({_id:req.user._id}, function(err,user){
+			if (user.dislikes.indexOf(bookId) === -1) {
+				user.dislikes.push(req.body.bookId);
+				user.markModified('dislikes');
+				user.save(function(err){
+					if (err) console.log(err);
+					res.send('Saved!');
+				});
+			} else {
+				res.send('Already saved');
+			}
+				
+		});
+	},
+	addRead: function(req,res) {
+		var bookId = req.body.bookId;
+		userModel.findOne({_id:req.user._id}, function(err,user){
+			if (user.dislikes.indexOf(bookId) === -1) {
+				user.read.push(req.body.bookId);
+				user.markModified('read');
+				user.save(function(err){
+					if (err) console.log(err);
+					res.send('Saved!');
+				});
+			} else {
+				res.send('Already saved');
+			}
+		});
 	}
 }

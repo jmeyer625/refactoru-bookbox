@@ -36,8 +36,22 @@ var userSchema = new mongoose.Schema({
 		type: {},
 		default: populateCelebs(celebs)
 	},
-	read: [],
-	recs: [],
+	dislikes: {
+		type: [],
+		default: []
+	},
+	likes: {
+		type: [],
+		default: []
+	},
+	read: {
+		type: [],
+		default: []
+	},
+	recs: {
+		type: [],
+		default: []
+	},
 	address: {},
 	complete: {
 		type: Boolean,

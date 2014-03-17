@@ -58,6 +58,10 @@ app.get('/user/:id', userController.showPage);
 
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
+app.post('/addLike', userController.addLike);
+app.post('/addDislike', userController.addDislike);
+app.post('/addRead', userController.addRead);
+
 
 app.get('/seebooks', bookController.addBooks);
 app.get('/writefile', bookController.writeFiles);

@@ -4,7 +4,7 @@ $(function(){
 	var $container = $('.masonry');
 	$container.imagesLoaded(function(){
 		$container.masonry({
-			columnWidth: 250,
+			columnWidth: 300,
 			itemSelector: '.rec'
 		})
 	});

@@ -176,7 +176,7 @@ block content
                   .form-buttons
                     p.pre I don't like this
                     .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      input(type="checkbox", name="passages[#{passages[4*i].title}]")
                       label I like this
                   p #{passages[4*i].passage}
                     
@@ -184,7 +184,7 @@ block content
                   .form-buttons
                     p.pre I don't like this
                     .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      input(type="checkbox", name="passages[#{passages[4*i+1].title}]")
                       label I like this
                   p #{passages[4*i+1].passage}
               .row
@@ -192,7 +192,7 @@ block content
                   .form-buttons
                     p.pre I don't like this
                     .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      input(type="checkbox", name="passages[#{passages[4*i+2].title}]")
                       label I like this
                   p #{passages[4*i+2].passage}
                   
@@ -200,7 +200,7 @@ block content
                   .form-buttons
                     p.pre I don't like this
                     .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      input(type="checkbox", name="passages[#{passages[4*i+3].title}]")
                       label I like this
                   p #{passages[4*i+3].passage}
                   

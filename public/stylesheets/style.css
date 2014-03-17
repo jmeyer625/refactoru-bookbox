@@ -9,7 +9,12 @@ a {
 }
 .container {
   max-width: 1200px;
-  margin: auto;
+  position: relative;
+}
+.landing {
+  position: fixed;
+  top: 40px;
+  left: 200px;
 }
 .landing-img {
   background-image: url("/images/tatteredbooks.jpg");
@@ -52,6 +57,32 @@ a {
   max-width: 19.5%;
   text-align: center;
   position: relative;
+}
+.user-title {
+  margin-top: 0;
+}
+.dialog {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+}
+#sideMenu {
+  margin: 0;
+  display: inline-block;
+}
+#menuCol {
+  text-align: right;
+}
+.dialog-div {
+  z-index: 999;
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .rec-hover {
   width: 100%;
