@@ -15,5 +15,8 @@
     "async": "~0.2.10",
     "httpreq": "~0.3.8",
     "googleapis": "~0.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.0.15"
   }
 }

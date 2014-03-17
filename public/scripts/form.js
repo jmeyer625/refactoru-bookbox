@@ -34,13 +34,10 @@ $(function(){
 	$(document).on('click', '.next', function(e){
 		e.preventDefault();
 		var form = $(this).closest('.form-page');
-		console.log('test form')
 		if (form.attr('data-section')==='1') {
 			console.log('test 1')
 			if (!validateForm(form)){
-				console.log('test 3')
 				$('.modal').modal('show');
-				console.log('hello')
 				return false
 			}
 		}

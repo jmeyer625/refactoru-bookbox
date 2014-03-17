@@ -2,19 +2,27 @@ extends userlayout
 
 block content
     h1 Welcome to BookBox, #{user.firstName}
+    p Here are some of the books we have coming up for you in the next couple of months. If you see something you don't want, let us know by clicking the red thumbs down button. If you see something you particuarly like, click the green thumbs up button. Happy reading!
+    .ui.modal.like-modal
+        p Thanks for letting us know. We'll make sure to include more books like this.
+        button OK
+    .ui.modal.dislike-modal
+        p Why don't you want this book?
+        button I already own it or have read it
+        button It doesn't seem like something I'd like
     .rec-container.masonry
-        each book in user.recs
+        each book in books
             .rec
                 .rec-hover
-                    a.ui.button.positive
+                    a.ui.button.positive.like
                         i.thumbs.up.icon
-                    a.ui.button.negative
+                    a.ui.button.negative.dislike
                         i.thumbs.down.icon
-                h2.title #{book.Title}
                 if book.picture
                     img(src="#{book.picture}").cover-img
                 else
                     img(src="/images/notfound.jpg").cover-img
+                h2.title #{book.Title}
                 p.author By #{book.Author}
 block pagescripts
     script(src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js")

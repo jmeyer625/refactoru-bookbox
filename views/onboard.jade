@@ -32,7 +32,7 @@ block content
           .field
             label Password
               .ui.left.labeled.icon.input
-                input(type="text", placeholder="Password", name="password")
+                input(type="password", placeholder="Password", name="password")
                 .ui.corner.label
                   i.icon.asterisk
         .field
@@ -160,19 +160,49 @@ block content
               label Warren Buffett
         
     .form-page(data-section='3')
-      -for (var i=0; i<passages.length; i++)
+      -for (var i=0; i<passages.length/4; i++)
         .ui.form.segment.passage-div(data-passage='#{i}')
           .field.form-buttons
               .ui.prev-passage.button.positive Previous
-              if i < passages.length - 1
+              if i < passages.length/4 - 1
                 .ui.next-passage.button.positive Next
-              if i === passages.length - 1
+              if i === passages.length/4 - 1
                 input(type="submit", value="Submit").ui.right.orange.button
-          p #{passages[i].passage}
-          .form-buttons
-            p.pre I don't like this
-            .ui.slider.checkbox
-              input(type="checkbox", name="passages[#{passages[i].title}]")
-              label I like this
+          h2 Please indicate how you feel about the following passages. This will help us understand which kinds of books you might like to receive.
+          .ui.grid
+            .sixteen.wide.column
+              .row
+                .passage
+                  .form-buttons
+                    p.pre I don't like this
+                    .ui.slider.checkbox
+                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      label I like this
+                  p #{passages[4*i].passage}
+                    
+                .passage
+                  .form-buttons
+                    p.pre I don't like this
+                    .ui.slider.checkbox
+                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      label I like this
+                  p #{passages[4*i+1].passage}
+              .row
+                .passage
+                  .form-buttons
+                    p.pre I don't like this
+                    .ui.slider.checkbox
+                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      label I like this
+                  p #{passages[4*i+2].passage}
+                  
+                .passage
+                  .form-buttons
+                    p.pre I don't like this
+                    .ui.slider.checkbox
+                      input(type="checkbox", name="passages[#{passages[i].title}]")
+                      label I like this
+                  p #{passages[4*i+3].passage}
+                  
 block pagescripts
   script(src='/scripts/form.js')            

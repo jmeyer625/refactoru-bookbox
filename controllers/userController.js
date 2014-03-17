@@ -48,6 +48,7 @@ module.exports = {
 			if (user.saved) {
 				res.render('userpage', {
 					user: user,
+					books: user.recs.slice(0,12),
 					title: 'BookBox | ' + user.firstName + ' ' + user.lastName
 				});
 			} else {
