@@ -1,0 +1,24 @@
+extends userlayout
+
+block content
+	h1 Profile details
+	p #{user.firstName} #{user.lastName}
+	p #{user.sex}
+	p #{user.address.address_line_1}
+	p #{user.address.address_line_2}
+	p #{user.address.address_city}
+	p #{user.address.address_state}
+	p #{user.address.address_zip}
+	p #{user.birthdate}
+	p #{user.email}
+
+	h1 Passage preferences
+	each value, passage in user.passages
+		p #{passage} #{value}
+
+	h1 Celebrity preferences
+	each value, celeb in user.celebs
+		p #{celeb} #{value}
+
+block pagescripts
+	script(src="/scripts/profile.js")

@@ -22,30 +22,30 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     
-      .ui.inverted.menu.teal
-        .ui.grid
-          .four.wide.column
-          .twelve.wide.column
-            .container
-              a.item(href='/home') BookBox
-              .right.menu
-                a.item(href='/home') Home
-                a.item(href='/browse') Browse
-                .item
-                  .ui.small.icon.input
-                    input(type="text",placeholder="Search...")
-                    i.search.icon
-                .item
-                  a.ui.red.button(href="/logout") Log out
+    .ui.inverted.menu.teal
+      .ui.grid
+        .four.wide.column
+        .twelve.wide.column
+          .container
+            a.item(href='/home') BookBox
+            .right.menu
+              a.item(href='/home') Home
+              a.item(href='/browse') Browse
+              .item
+                .ui.small.icon.input
+                  input(type="text",placeholder="Search...")
+                  i.search.icon
+              .item
+                a.ui.red.button(href="/logout") Log out
     .ui.stackable.grid
       .four.wide.column#menuCol
         .ui.vertical.menu#sideMenu
-          a.active.teal.item What's coming up
-          a.item Rate books you've read
-          a.item Edit profile
+          a.active.teal.item#menu-item-1(href="/user/"+user._id) What's coming up
+          a.item#menu-item-2(href="/ratebooks/"+user._id) Rate books you've read
+          a.item#menu-item-3(href="/profile/"+user._id) Edit profile
       .twelve.wide.column
         .container
           block content
-    script(type='text/javascript' src="http://code.jquery.com/jquery-2.0.3.min.js")
-    script(type="text/javascript" src="/scripts/semantic.min.js")
+    script(type='text/javascript', src="http://code.jquery.com/jquery-2.0.3.min.js")
+    script(type="text/javascript", src="/scripts/semantic.min.js")
     block pagescripts

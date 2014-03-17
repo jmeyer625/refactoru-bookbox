@@ -49,6 +49,9 @@ a {
   margin-top: 0;
   padding: 20px;
 }
+.menu .twelve.wide {
+  margin: 0;
+}
 .rec {
   display: none;
   border-radius: 5px;

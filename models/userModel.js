@@ -48,6 +48,10 @@ var userSchema = new mongoose.Schema({
 		type: [],
 		default: []
 	},
+	sent: {
+		type: [],
+		default: []
+	},
 	recs: {
 		type: [],
 		default: []

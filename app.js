@@ -55,6 +55,8 @@ app.get('/home', function (req,res){
 })
 
 app.get('/user/:id', userController.showPage);
+app.get('/ratebooks/:id', userController.rateBooks);
+app.get('/profile/:id', userController.showProfile)
 
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);

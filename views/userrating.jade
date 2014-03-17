@@ -1,3 +1,38 @@
 extends userlayout
 
 block content
+    .dialog-div.like-dialog-div
+        .ui.dialog.like-dialog
+            p Thanks for letting us know. We'll make sure to include more books like this.
+            button.addLike.ui.button.positive OK
+    .dialog-div.dislike-dialog-div
+        .ui.dialog.dislike-dialog
+            p Why don't you want this book?
+            button.addRead.ui.button.positive I already own it or have read it
+            button.addDislike.ui.button.negative It doesn't seem like something I'd like
+    .rating-section
+        h1 Books we've sent
+        if (!user.sent.length)
+            p We haven't sent you anything yet
+    .rating-section
+        h1 Other books you might have read
+        .rec-container.masonry
+            each book in books
+                .rec(data-id="#{book._id}")
+                    .rec-hover
+                        a.ui.button.positive.like
+                            i.thumbs.up.icon
+                        a.ui.button.negative.dislike
+                            i.thumbs.down.icon
+                    if book.picture
+                        img(src="#{book.picture}").cover-img
+                    else
+                        img(src="/images/notfound.jpg").cover-img
+                    h2.title #{book.Title}
+                    p.author By #{book.Author}
+
+
+block pagescripts
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js")
+    script(src="/scripts/ratingpage.js")

@@ -1,4 +1,5 @@
 var userModel = require('../models/userModel');
+var bookModel = require('../models/bookModel');
 var passages = require('../config/bookpassages');
 
 module.exports = {
@@ -18,7 +19,6 @@ module.exports = {
 	},
 	createProfile: function (req,res) {
 		var submitted = req.body;
-		console.log(submitted);
 		userModel.findOne({_id: req.user._id}, function(err,user){
 			user.address = {
 				address_line_1: submitted.address_line_1,
@@ -102,6 +102,30 @@ module.exports = {
 			} else {
 				res.send('Already saved');
 			}
+		});
+	},
+	rateBooks: function(req,res) {
+		userModel.findOne({_id: req.user._id}, function(err, user){
+			if (err) console.log(err);
+			bookModel.find({}, function(err, books){
+				books = books.filter(function(book){
+					console.log((user.likes.indexOf(book._id) === -1),(user.dislikes.indexOf(book._id) === -1));
+					return ((user.likes.indexOf(book._id) === -1) && (user.dislikes.indexOf(book._id) === -1));
+				});
+				res.render('userrating', {
+					user: req.user,
+					books: books
+				});
+			})
+			
+		});
+	},
+	showProfile: function(req,res) {
+		userModel.findOne({_id:req.user._id}, function(err,user){
+			if (err) console.log(err);
+			res.render('profile', {
+				user: user
+			});
 		});
 	}
 }
