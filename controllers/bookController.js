@@ -108,6 +108,7 @@ module.exports = {
 	},
 	list: function(req,res) {
 		bookModel.find({}, function(err, docs){
+			console.log(docs)
 			res.render('books', {
 				docs: docs,
 				user: req.user

@@ -10,7 +10,7 @@ $(function(){
 	var $container = $('.masonry');
 	$container.imagesLoaded(function(){
 		$container.masonry({
-			columnWidth: 300,
+			columnWidth: 280,
 			itemSelector: '.rec'
 		});
 	});

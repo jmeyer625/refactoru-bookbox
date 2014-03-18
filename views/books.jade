@@ -10,9 +10,9 @@ block content
                     else
                         img(src="/images/notfound.jpg").cover-img
                 .book-info
-                    h2.title #{docs[i].title}
-                    h3 By #{docs[i].author}
-                    p #{docs[i].length} pages
+                    h2.title #{docs[i].Title}
+                    h4 By #{docs[i].Author}
+                    p #{docs[i].Length} pages
 block pagescripts
     script(src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js")
     script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js")    
