@@ -12,10 +12,14 @@ passport.deserializeUser(function(uid, done){
 	})
 });
 
+
+
 var fbStrategy = new facebookStrategy({
 	clientID: '289976004486010',
 	clientSecret: '6263b67f20668c6c381343a69e080aee',
-	callbackURL: 'http://localhost:3000/facebook/callback'
+	callbackURL: 'http://bookbox.herokuapp/facebook/callback'
+	//callbackURL: 'http://localhost:3000/facebook/callback'
+
 }, function(accessToken, refreshToken, profile, done) {
 
 	userModel.findOne({facebookId:profile.id}, function(err,user){
