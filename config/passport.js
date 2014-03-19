@@ -17,7 +17,7 @@ passport.deserializeUser(function(uid, done){
 var fbStrategy = new facebookStrategy({
 	clientID: '439798682789902',
 	clientSecret: '6f62c823358a37325e3ba83405b7f0f5',
-	callbackURL: 'http://bookbox.herokuapp/facebook/callback'
+	callbackURL: 'http://bookbox.herokuapp.com/facebook/callback'
 	//callbackURL: 'http://localhost:3000/facebook/callback'
 
 }, function(accessToken, refreshToken, profile, done) {
