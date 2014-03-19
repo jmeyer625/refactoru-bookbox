@@ -1,9 +1,5 @@
-import numpy as np
 import pandas as pd
-import sklearn as sk
 import json
-import statsmodels as stats
-from pprint import pprint
 
 
 books = pd.read_json('./tmp/test.json')
