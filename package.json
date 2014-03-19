@@ -14,7 +14,9 @@
     "passport-facebook": "~1.0.3",
     "async": "~0.2.10",
     "httpreq": "~0.3.8",
-    "googleapis": "~0.6.1"
+    "googleapis": "~0.6.1",
+    "aws-sdk": "~2.0.0-rc11",
+    "aws-lib": "~0.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.0.15"

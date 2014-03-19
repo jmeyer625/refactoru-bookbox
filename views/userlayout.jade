@@ -42,7 +42,9 @@ html
         .ui.vertical.menu#sideMenu
           a.active.teal.item#menu-item-1(href="/user/"+user._id) What's coming up
           a.item#menu-item-2(href="/ratebooks/"+user._id) Rate books you've read
-          a.item#menu-item-3(href="/profile/"+user._id) Edit profile
+          a.item#menu-item-3(href="/rated/"+user._id) See what you've rated
+          a.item#menu-item-4(href="/profile/"+user._id) Edit profile
+
       .twelve.wide.column
         .container
           block content

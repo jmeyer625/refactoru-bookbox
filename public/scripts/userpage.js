@@ -38,39 +38,61 @@ $(function(){
 		$('.dislike-dialog').attr('data-id', $(this).closest('.rec').attr('data-id'));
 	});
 	$(document).on('click', '.addLike', function(){
+		var id = $(this).closest('.dialog').attr('data-id')
 		$.ajax('/addLike', {
 			type: 'POST',
 			data: {
-				bookId: $(this).closest('.dialog').attr('data-id')
+				bookId: id
 			},
 			success: function(data) {
-				console.log(data);
 				$('.like-dialog-div').fadeOut();
+
 				
 			}
 		});
 	});
 	$(document).on('click', '.addDislike', function(){
+		var id = $(this).closest('.dialog').attr('data-id')
 		$.ajax('/addDislike',{
 			type: 'POST',
 			data: {
-				bookId: $(this).closest('.dialog').attr('data-id')
+				bookId: id
 			},
 			success: function(data) {
-				console.log(data);
-				$('.dislike-dialog-div').fadeOut();
+				$('.dislike-dialog-div').fadeOut(function(){
+					var bookDiv = $('.rec[data-id='+id+']');
+					var title = bookDiv.find('.title').text();
+					bookDiv.fadeOut(function(){
+						var newEl = $('.removed.template').clone()
+						newEl.find('.title').text(title);
+						newEl.removeClass('template');
+						bookDiv.empty().append(newEl.show());
+						bookDiv.fadeIn();
+					});
+				});
+				
 			}
 		});
 	})
 	$(document).on('click', '.addRead', function(){
+		var id = $(this).closest('.dialog').attr('data-id')
 		$.ajax('/addRead', {
 			type: 'POST',
 			data: {
-				bookId: $(this).closest('.dialog').attr('data-id')
+				bookId: id
 			},
 			success: function(data) {
-				console.log(data);
-				$('.dislike-dialog-div').fadeOut();
+				$('.dislike-dialog-div').fadeOut(function(){
+					var bookDiv = $('.rec[data-id='+id+']')
+					var title = bookDiv.find('.title').text();
+					bookDiv.fadeOut(function(){
+						var newEl = $('.removed.template').clone()
+						newEl.find('.title').text(title);
+						newEl.removeClass('template');
+						bookDiv.empty().append(newEl.show());
+						bookDiv.fadeIn();
+					})
+				});
 			}
 		});
 	});

@@ -1,6 +1,7 @@
 var userModel = require('../models/userModel');
 var bookModel = require('../models/bookModel');
 var passages = require('../config/bookpassages');
+var async = require('async');
 
 module.exports = {
 	onboard: function(req,res) {
@@ -46,11 +47,15 @@ module.exports = {
 	showPage: function(req,res) {
 		userModel.findOne({_id:req.user._id}, function(err,user){
 			if (user.saved) {
-				res.render('userpage', {
-					user: user,
-					books: user.recs.slice(0,12),
-					title: 'BookBox | ' + user.firstName + ' ' + user.lastName
-				});
+				user.filterRecs(function(err){
+					if (err) console.log (err);
+					res.render('userpage', {
+						user: user,
+						books: user.recs.slice(0,12),
+						title: 'BookBox | ' + user.firstName + ' ' + user.lastName
+					});
+				})
+				
 			} else {
 				res.redirect('/onboard')
 			}
@@ -127,5 +132,77 @@ module.exports = {
 				user: user
 			});
 		});
+	},
+	filter: function(req,res) {
+		userModel.findOne({_id:req.user._id}, function(err,user){
+			user.filterRecs(function(err){
+				if(err) console.log(err);
+				res.redirect('/');
+			});
+		});
+	},
+	showRated: function(req,res) {
+		userModel.findOne({_id: req.user._id}, function(err,user){
+			user.filterRecs(function(err){
+				var queue = [];
+				var dislikes = [];
+				var likes = [];
+				var read = [];
+				if (user.dislikes.length){
+					console.log('got to dislikes')
+					user.dislikes.map(function(dislike){
+						queue.push(function(cb){
+							bookModel.findOne({_id:dislike}, function(err,book){
+								console.log('found book(dislike)', book);
+								if (err) console.log(err);
+								dislikes.push(book);
+								cb(err,book);
+							});
+						});
+					})
+				}
+				if (user.likes.length) {
+					console.log('got to likes')
+					user.likes.map(function(like){
+						queue.push(function(cb){
+							bookModel.findOne({_id:like}, function(err,book){
+								console.log('found book(like)', book);
+								if (err) console.log(err);
+								likes.push(book);
+								cb(err,book);
+							});
+						});
+					});
+				}
+				if (user.dislikes.length){
+					console.log('got to read')
+					user.read.map(function(item){
+						queue.push(function(cb){
+							bookModel.findOne({_id:item}, function(err,book){
+								console.log('found book(read)', book);
+								if (err) console.log(err);
+								read.push(book);
+								cb(err,book);
+							});
+						});
+					});
+				}
+				console.log(queue);
+				if (queue.length) {
+					async.series(queue, function(err, results){
+						if (err) res.send(err);
+						res.render('rated', {
+							user: user,
+							dislikes: dislikes,
+							likes: likes,
+							read: read
+						})
+					})
+				} else {
+					res.render('/')
+				}
+				
+			})
+		})
 	}
 }

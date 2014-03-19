@@ -1,24 +1,45 @@
 extends userlayout
 
 block content
-	h1 Profile details
-	p #{user.firstName} #{user.lastName}
-	p #{user.sex}
-	p #{user.address.address_line_1}
-	p #{user.address.address_line_2}
-	p #{user.address.address_city}
-	p #{user.address.address_state}
-	p #{user.address.address_zip}
-	p #{user.birthdate}
-	p #{user.email}
+	h1.profile-title Profile details
+	.ui.grid
+		.three.wide.column
+			p Name:
+			p E-mail:
+			p Sex:
+			p Address Line 1:
+			p Address Line 2:
+			p City, State, ZIP:
+			p Birthdate:
+		.ten.wide.column
+			p #{user.firstName} #{user.lastName}
+			p #{user.email}
+			p #{user.sex}
+			p #{user.address.address_line_1}
+			p #{user.address.address_line_2}
+			p #{user.address.address_city}, #{user.address.address_state}, #{user.address.address_zip}
+			p #{user.birthdate}
+			
 
-	h1 Passage preferences
+	h1.profile-title Passage preferences
+	h3 You said you liked:
 	each value, passage in user.passages
-		p #{passage} #{value}
+		if value === true
+			p #{passage}
+	h3 You said you didn't like:
+	each value, passage in user.passages
+		if value === false
+			p #{passage}
 
-	h1 Celebrity preferences
+	h1.profile-title Celebrity preferences
+	h3 You said you liked:
 	each value, celeb in user.celebs
-		p #{celeb} #{value}
+		if value === true
+			p #{celeb}
+	h3 You said you didn't like:
+	each value, celeb in user.celebs
+		if value === false
+			p #{celeb}
 
 block pagescripts
 	script(src="/scripts/profile.js")

@@ -1,0 +1,18 @@
+extends userlayout
+
+block content
+	h1.profile-title Books you've rated
+	h3 You said you liked:
+	if user.likes.length
+		each book in likes
+			p #{book.title}
+	else
+		p You haven't said you like any books yet.
+	h3 You said you didn't like:
+	if user.dislikes.length
+		each book in dislikes
+			p #{book.title}
+	else
+		p You haven't said you disliked any books yet.
+block pagescripts
+	script(src='/scripts/rated.js')

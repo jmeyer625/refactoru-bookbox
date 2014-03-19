@@ -10,11 +10,7 @@ a {
 .container {
   max-width: 1200px;
   position: relative;
-  padding: 20px;
   margin: auto;
-}
-.menu .container {
-  display: inline;
 }
 .landing {
   position: fixed;
@@ -34,10 +30,16 @@ a {
 }
 .tag-line {
   font-size: 60px;
-  width: 50%;
+  width: 80%;
+  max-width: 800px;
 }
 .ui.checkbox {
   display: block;
+}
+.button.amazon {
+  margin: 10px 5px;
+  background-color: #fd9530;
+  color: #fff;
 }
 .modal p {
   color: #f00;
@@ -62,7 +64,9 @@ a {
   border-radius: 5px;
   padding: 10px 20px;
   margin: 10px 0;
+  min-width: 15%;
   max-width: 19.5%;
+  min-height: 200px;
   text-align: center;
   position: relative;
 }
@@ -79,6 +83,11 @@ a {
   text-align: center;
   padding: 20px;
 }
+.dialog a.ui.button,
+.dialog button.ui.button {
+  display: block;
+  margin: auto;
+}
 #sideMenu {
   margin: 0;
   display: inline-block;
@@ -94,8 +103,10 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  background-color: rgba(0,0,0,0.5);
 }
-.rec-hover {
+.rec-hover,
+.removed {
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -107,16 +118,26 @@ a {
   text-align: center;
 }
 .rec-hover a.button.positive,
-.rec-hover a.button.negative {
+.removed a.button.positive,
+.rec-hover a.button.negative,
+.removed a.button.negative {
   opacity: 1;
   margin-top: 50%;
 }
 .rec-hover a.button.positive i,
-.rec-hover a.button.negative i {
+.removed a.button.positive i,
+.rec-hover a.button.negative i,
+.removed a.button.negative i {
   margin: 0;
 }
-.rec-hover a.button.positive {
+.rec-hover a.button.positive,
+.removed a.button.positive {
   margin-right: 10px;
+}
+.rec-hover p,
+.removed p {
+  padding: 15px;
+  color: #fff;
 }
 .title {
   font-size: 16px;
@@ -138,6 +159,9 @@ a {
   display: none;
   font-size: 18px;
   position: relative;
+}
+.form-container {
+  display: inline;
 }
 .form-page {
   position: relative;
@@ -183,4 +207,12 @@ a {
 .pre:hover {
   color: #444;
   cursor: pointer;
+}
+.error {
+  color: #f00;
+  border: 2px solid #f00;
+  border-radius: 5px;
+}
+.profile-title {
+  margin-top: 0;
 }

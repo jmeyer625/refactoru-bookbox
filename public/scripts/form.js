@@ -4,19 +4,23 @@ $(function(){
 		var condition = true
 		var inputNames = ['firstName', 'lastName', 'email', 'password', 'gender', 'birthdate', 'address_line_1', 'address_state', 'address_city', 'address_zip'];
 		var inputs = form.find('input');
+		var errors = [];
 		inputs.each(function(i, el){
-			if (!$(el).val()) {
-				return condition = false
+			if (inputNames.indexOf($(el).attr('name')) !== -1) {
+				if (!$(el).val()) {
+					errors.push(el);
+				}	
 			}
+			
 			if ($(el).attr('name') === 'birthdate') {
 				if (!reGoodDate.test($(el).val())) {
-					return condition = false
+					errors.push(el);
 				}
 			} else {
 				console.log('got here')
 			}
-		})
-		return condition
+		});
+		return {errors: errors}
 	}
 
 	$('.ui.selection.dropdown')
@@ -35,10 +39,17 @@ $(function(){
 		e.preventDefault();
 		var form = $(this).closest('.form-page');
 		if (form.attr('data-section')==='1') {
-			console.log('test 1')
-			if (!validateForm(form)){
+			console.log('test 1');
+			var validation = validateForm(form);
+			console.log(validation);
+			if (validation.errors.length){
+				for (var i=0; i<validation.errors.length; i++) {
+					$(validation.errors[i]).closest('label').addClass('error')
+				}
 				$('.modal').modal('show');
 				return false
+			} else {
+				$('label').removeClass('error');
 			}
 		}
 		var thisForm = $(this).closest('.form-page');

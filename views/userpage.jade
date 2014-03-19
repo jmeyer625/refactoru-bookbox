@@ -5,7 +5,8 @@ block content
     p Here are some of the books we have coming up for you in the next couple of months. 
     ul 
         li If you see something you don't want, let us know by clicking the red thumbs down button. 
-        li If you see something you particuarly like, click the green thumbs up button. 
+        li If you see something you particuarly like, click the green thumbs up button.
+        li If you can't wait for us to send you something, you can buy it on Amazon! 
     p Happy reading!
     .dialog-div.like-dialog-div
         .ui.dialog.like-dialog
@@ -16,6 +17,9 @@ block content
             p Why don't you want this book?
             button.addRead.ui.button.positive I already own it or have read it
             button.addDislike.ui.button.negative It doesn't seem like something I'd like
+    div.removed.template
+        p Thanks for letting us know. You will not receive:
+        p.title
     .rec-container.masonry
         each book in books
             .rec(data-id="#{book._id}")
@@ -24,6 +28,8 @@ block content
                         i.thumbs.up.icon
                     a.ui.button.negative.dislike
                         i.thumbs.down.icon
+                    if book.amazonURL
+                        a.ui.button.amazon(href="#{book.amazonURL}", target="blank") Buy on Amazon
                 if book.picture
                     img(src="#{book.picture}").cover-img
                 else

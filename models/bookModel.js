@@ -28,7 +28,8 @@ var bookSchema = new mongoose.Schema({
 	gender: String,
 	length: Number,
 	ISBN: String,
-	picture: String
+	picture: String,
+	amazonURL: String
 })
 
 module.exports = mongoose.model('book', bookSchema);

@@ -52,18 +52,22 @@ app.get('/home', function (req,res){
 	} else {
 		res.redirect('/');
 	}
-})
+});
 
 app.get('/user/:id', userController.showPage);
 app.get('/ratebooks/:id', userController.rateBooks);
-app.get('/profile/:id', userController.showProfile)
+app.get('/profile/:id', userController.showProfile);
+app.get('/rated/:id', userController.showRated);
+
+app.get('/filtertest', userController.filter);
+app.get('/amazontest', apiController.testBook);
+app.get('/populateAmazonLinks', apiController.getAwsInfo); 
 
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
 app.post('/addLike', userController.addLike);
 app.post('/addDislike', userController.addDislike);
 app.post('/addRead', userController.addRead);
-
 
 app.get('/seebooks', bookController.addBooks);
 app.get('/writefile', bookController.writeFiles);

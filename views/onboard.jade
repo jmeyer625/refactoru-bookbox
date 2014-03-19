@@ -3,11 +3,14 @@ extends formlayout
 block content
   form(method="post", name="userform", action="/onboard/submit").indicator
     .form-page(data-section="1")
+      .ui.small.steps.teal
+        .ui.step.active Step 1
+        .ui.step.disabled Step 2
+        .ui.step.disabled Step 3
       .ui.modal
         p Please fill out the form correctly.
       .ui.form.segment
         .field.form-buttons
-          a.ui.positive.button.prev Previous
           a.ui.positive.button.next Next
         .two.fields
           .field
@@ -64,8 +67,6 @@ block content
           label Address Line 2
             .ui.left.labeled.icon.input
               input(type="text", placeholder="Address Line 2", name="address_line_2")
-              .ui.corner.label
-                i.icon.asterisk
         .three.fields
           .field
             label City
@@ -87,7 +88,10 @@ block content
                   i.icon.asterisk
         
     .form-page(data-section="2")
-      
+      .ui.small.steps
+        .ui.step.disabled Step 1
+        .ui.step.active Step 2
+        .ui.step.disabled Step 3
       .ui.form.segment 
         .field.form-buttons
               a.ui.positive.button.prev Previous
@@ -160,6 +164,10 @@ block content
               label Warren Buffett
         
     .form-page(data-section='3')
+      .ui.small.steps
+        .ui.step.disabled Step 1
+        .ui.step.disabled Step 2
+        .ui.step.active Step 3
       -for (var i=0; i<passages.length/4; i++)
         .ui.form.segment.passage-div(data-passage='#{i}')
           .field.form-buttons

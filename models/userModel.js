@@ -19,6 +19,7 @@ var populatePassages = function(passages) {
 	return returnObj
 }
 
+
 var userSchema = new mongoose.Schema({
 	facebookId: String,
 	email: String,
@@ -70,5 +71,32 @@ var userSchema = new mongoose.Schema({
 		default: populatePassages(passages)
 	}
 });
+
+userSchema.methods.filterRecs = function(cb) {
+	var toRemove = [];
+	for (var i=0; i<this.recs.length; i++) {
+		if (this.dislikes.indexOf(this.recs[i]._id)!==-1) {
+			toRemove.push(this.recs[i]);
+		}
+		if (this.read.indexOf(this.recs[i]._id)!==-1) {
+			toRemove.push(this.recs[i]);
+		}
+		if (this.sent.indexOf(this.recs[i]._id)!==-1) {
+			toRemove.push(this.recs[i]);
+		}
+	}
+	if (toRemove.length) {
+		for (var i=0; i<toRemove.length; i++) {
+			var removed = this.recs.splice(this.recs.indexOf(toRemove[i]), 1);
+			console.log(removed);
+		}
+		this.markModified('recs');
+		this.save(function(err){
+			cb(err);
+		});
+	} else {
+		cb(null);
+	}
+}
 
 module.exports = mongoose.model('user', userSchema);
