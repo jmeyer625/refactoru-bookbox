@@ -1,6 +1,4 @@
 import pandas as pd
-import json
-
 
 books = pd.read_json('./tmp/test.json')
 user = pd.read_json('./tmp/user.json')
