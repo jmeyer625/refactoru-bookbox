@@ -125,13 +125,24 @@ a
 .form-page
   position: relative
 .form-buttons
-  width: auto
-  text-align: center
   margin: auto
+  position: relative
+  width: 100%
+  display: block
+  min-height: 40px
   .ui.button
     width: 150px
     font-size: 12px
     margin: 0 20px
+    position: absolute
+  .ui.button.next, .ui.button.next-passage, .button.orange
+    bottom: 10px
+    right: 10px
+  .ui.button.prev, .ui.button.prev-passage
+    bottom: 10px
+    left: 10px
+  .button.huge
+    font-size: 1.375rem
   .ui.slider
     display: inline-block
 .field
@@ -157,5 +168,7 @@ a
   color: red
   border: 2px solid red
   border-radius: 5px
+.passage-buttons
+  text-align: center
 .profile-title
   margin-top: 0

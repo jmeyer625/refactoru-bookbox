@@ -10,8 +10,7 @@ block content
       .ui.modal
         p Please fill out the form correctly.
       .ui.form.segment
-        .field.form-buttons
-          a.ui.positive.button.next Next
+        
         .two.fields
           .field
             label First name
@@ -33,11 +32,11 @@ block content
                 .ui.corner.label
                   i.icon.asterisk
           .field
-            label Password
-              .ui.left.labeled.icon.input
-                input(type="password", placeholder="Password", name="password")
-                .ui.corner.label
-                  i.icon.asterisk
+            //- label Password
+            //-   .ui.left.labeled.icon.input
+            //-     input(type="password", placeholder="Password", name="password")
+            //-     .ui.corner.label
+            //-       i.icon.asterisk
         .field
           label Sex    
             .ui.selection.dropdown
@@ -86,16 +85,15 @@ block content
                 input(type="text", placeholder="ZIP Code", name="address_zip")
                 .ui.corner.label
                   i.icon.asterisk
-        
+        .form-buttons
+          a.ui.positive.button.next Next
     .form-page(data-section="2")
       .ui.small.steps
         .ui.step.disabled Step 1
         .ui.step.active Step 2
         .ui.step.disabled Step 3
       .ui.form.segment 
-        .field.form-buttons
-              a.ui.positive.button.prev Previous
-              a.ui.positive.button.next Next
+        
         h2 Please select some individuals you admire from the following list.
         .ui.grid
           .four.wide.column
@@ -162,7 +160,9 @@ block content
             .ui.checkbox
               input(type="checkbox", name="celeb[warren_buffett]") 
               label Warren Buffett
-        
+          .form-buttons
+              a.ui.positive.button.prev Previous
+              a.ui.positive.button.next Next
     .form-page(data-section='3')
       .ui.small.steps
         .ui.step.disabled Step 1
@@ -170,47 +170,55 @@ block content
         .ui.step.active Step 3
       -for (var i=0; i<passages.length/4; i++)
         .ui.form.segment.passage-div(data-passage='#{i}')
-          .field.form-buttons
-              .ui.prev-passage.button.positive Previous
-              if i < passages.length/4 - 1
-                .ui.next-passage.button.positive Next
-              if i === passages.length/4 - 1
-                input(type="submit", value="Submit").ui.right.orange.button
+          
           h2 Please indicate how you feel about the following passages. This will help us understand which kinds of books you might like to receive.
           .ui.grid
             .sixteen.wide.column
               .row
                 .passage
-                  .form-buttons
-                    p.pre I don't like this
-                    .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[4*i].title}]")
-                      label I like this
+                  .passage-buttons
+                    .ui.buttons
+                      button.ui.button.negative.dislike Dislike
+                      .or
+                      button.ui.button.active.no-opinion No opinion
+                      .or
+                      button.ui.button.positive.like Like
                   p #{passages[4*i].passage}
                     
                 .passage
-                  .form-buttons
-                    p.pre I don't like this
-                    .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[4*i+1].title}]")
-                      label I like this
+                  .passage-buttons
+                    .ui.buttons
+                      button.ui.button.negative.dislike Dislike
+                      .or
+                      button.ui.button.active.no-opinion No opinion
+                      .or
+                      button.ui.button.positive.like Like
                   p #{passages[4*i+1].passage}
               .row
                 .passage
-                  .form-buttons
-                    p.pre I don't like this
-                    .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[4*i+2].title}]")
-                      label I like this
+                  .passage-buttons
+                    .ui.buttons
+                      button.ui.button.negative.dislike Dislike
+                      .or
+                      button.ui.button.active.no-opinion No opinion
+                      .or
+                      button.ui.button.positive.like Like
                   p #{passages[4*i+2].passage}
                   
                 .passage
-                  .form-buttons
-                    p.pre I don't like this
-                    .ui.slider.checkbox
-                      input(type="checkbox", name="passages[#{passages[4*i+3].title}]")
-                      label I like this
+                  .passage-buttons
+                    .ui.buttons
+                      button.ui.button.negative.dislike Dislike
+                      .or
+                      button.ui.button.active.no-opinion No opinion
+                      .or
+                      button.ui.button.positive.like Like
                   p #{passages[4*i+3].passage}
-                  
+            .form-buttons
+              .ui.prev-passage.button.positive Previous
+              if i < passages.length/4 - 1
+                .ui.next-passage.button.positive Next
+              if i === passages.length/4 - 1
+                input(type="submit", value="Submit").huge.ui.right.orange.button      
 block pagescripts
   script(src='/scripts/form.js')            

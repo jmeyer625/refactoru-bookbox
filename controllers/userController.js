@@ -199,7 +199,12 @@ module.exports = {
 						})
 					})
 				} else {
-					res.render('/')
+					res.render('rated', {
+						user: user,
+						dislikes: [],
+						likes: [],
+						read: []
+					})
 				}
 				
 			})
