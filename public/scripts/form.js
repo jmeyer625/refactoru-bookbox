@@ -129,6 +129,33 @@ $(function(){
 			}
 		});
 	});
+
+	$(document).on('click', '.passage-buttons .button', function(e){
+		e.preventDefault();
+		$(this).siblings().removeClass('active');
+		$(this).addClass('active');
+		var para = $(this).closest('.passage').find('p');
+		var input = $(this).siblings('input')[0];
+		if ($(this).hasClass('dislike')) {
+			para.removeClass('liked');
+			para.removeClass('no-opinion');
+			para.addClass('disliked');
+			$(input).val(-1);
+
+		} else if ($(this).hasClass('no-opinion')){
+			para.removeClass('liked');
+			para.removeClass('disliked');
+			para.addClass('no-opinion');
+			$(input).val(0)
+
+		} else if ($(this).hasClass('like')) {
+			para.removeClass('disliked');
+			para.removeClass('no-opinion');
+			para.addClass('liked');
+			$(input).val(1);
+		}
+
+	})
 	
 
 	

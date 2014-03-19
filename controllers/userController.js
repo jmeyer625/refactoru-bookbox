@@ -32,9 +32,7 @@ module.exports = {
 			for (key in submitted.celeb) {
 				user.celebs[key] = true;
 			}
-			for (key in submitted.passages) {
-				user.passages[key] = true;
-			}
+			user.passages = submitted.passages;
 			user.markModified('celebs');
 			user.markModified('passages');
 			user.saved = true;

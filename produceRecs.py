@@ -153,11 +153,10 @@ def calcUserPassagePersonas(user):
     if user['passages'][0]:
         passages = user['passages'][0]
         for passage, val in passages.items():
-            if val == True:
-                personas = passageMap[passage]
-                for persona in personas:
-                    personaKey = score_map[persona]
-                    user[personaKey][0] = user[personaKey][0] + 1
+            personas = passageMap[passage]
+            for persona in personas:
+                personaKey = score_map[persona]
+                user[personaKey][0] = user[personaKey][0] + float(val)
                 
 
 def normalizeScores(rec):

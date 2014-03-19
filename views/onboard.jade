@@ -3,10 +3,7 @@ extends formlayout
 block content
   form(method="post", name="userform", action="/onboard/submit").indicator
     .form-page(data-section="1")
-      .ui.small.steps.teal
-        .ui.step.active Step 1
-        .ui.step.disabled Step 2
-        .ui.step.disabled Step 3
+      
       .ui.modal
         p Please fill out the form correctly.
       .ui.form.segment
@@ -85,13 +82,16 @@ block content
                 input(type="text", placeholder="ZIP Code", name="address_zip")
                 .ui.corner.label
                   i.icon.asterisk
+        
         .form-buttons
+          .ui.small.steps.teal
+            .ui.step.active Step 1
+            .ui.step.disabled Step 2
+            .ui.step.disabled Step 3
+            .ui.step.disabled Step 4
           a.ui.positive.button.next Next
     .form-page(data-section="2")
-      .ui.small.steps
-        .ui.step.disabled Step 1
-        .ui.step.active Step 2
-        .ui.step.disabled Step 3
+      
       .ui.form.segment 
         
         h2 Please select some individuals you admire from the following list.
@@ -160,14 +160,17 @@ block content
             .ui.checkbox
               input(type="checkbox", name="celeb[warren_buffett]") 
               label Warren Buffett
+          
           .form-buttons
-              a.ui.positive.button.prev Previous
-              a.ui.positive.button.next Next
+            .ui.small.steps
+              .ui.step.disabled Step 1
+              .ui.step.active Step 2
+              .ui.step.disabled Step 3
+              .ui.step.disabled Step 4
+            a.ui.positive.button.prev Previous
+            a.ui.positive.button.next Next
     .form-page(data-section='3')
-      .ui.small.steps
-        .ui.step.disabled Step 1
-        .ui.step.disabled Step 2
-        .ui.step.active Step 3
+      
       -for (var i=0; i<passages.length/4; i++)
         .ui.form.segment.passage-div(data-passage='#{i}')
           
@@ -183,7 +186,8 @@ block content
                       button.ui.button.active.no-opinion No opinion
                       .or
                       button.ui.button.positive.like Like
-                  p #{passages[4*i].passage}
+                      input(type="hidden", value='0', name="passages[#{passages[4*i].title}]")
+                  p.no-opinion #{passages[4*i].passage}
                     
                 .passage
                   .passage-buttons
@@ -193,7 +197,8 @@ block content
                       button.ui.button.active.no-opinion No opinion
                       .or
                       button.ui.button.positive.like Like
-                  p #{passages[4*i+1].passage}
+                      input(type="hidden", value='0', name="passages[#{passages[4*i+1].title}]")
+                  p.no-opinion #{passages[4*i+1].passage}
               .row
                 .passage
                   .passage-buttons
@@ -203,7 +208,8 @@ block content
                       button.ui.button.active.no-opinion No opinion
                       .or
                       button.ui.button.positive.like Like
-                  p #{passages[4*i+2].passage}
+                      input(type="hidden", value='0', name="passages[#{passages[4*i+2].title}]")
+                  p.no-opinion #{passages[4*i+2].passage}
                   
                 .passage
                   .passage-buttons
@@ -213,12 +219,25 @@ block content
                       button.ui.button.active.no-opinion No opinion
                       .or
                       button.ui.button.positive.like Like
-                  p #{passages[4*i+3].passage}
+                      input(type="hidden", value='0', name="passages[#{passages[4*i+3].title}]")
+                  p.no-opinion #{passages[4*i+3].passage}
+            
             .form-buttons
+              
               .ui.prev-passage.button.positive Previous
               if i < passages.length/4 - 1
+                .ui.small.steps
+                  .ui.step.disabled Step 1
+                  .ui.step.disabled Step 2
+                  .ui.step.active Step 3
+                  .ui.step.disabled Step 4
                 .ui.next-passage.button.positive Next
               if i === passages.length/4 - 1
+                .ui.small.steps
+                  .ui.step.disabled Step 1
+                  .ui.step.disabled Step 2
+                  .ui.step.disabled Step 3
+                  .ui.step.active Step 4
                 input(type="submit", value="Submit").huge.ui.right.orange.button      
 block pagescripts
   script(src='/scripts/form.js')            

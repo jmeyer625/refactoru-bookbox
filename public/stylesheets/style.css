@@ -160,6 +160,21 @@ a {
   font-size: 18px;
   position: relative;
 }
+form p.disliked,
+form p.no-opinion,
+form p.liked {
+  border-radius: 5px;
+  margin-bottom: 5px !important;
+}
+p.disliked {
+  background-color: rgba(200,0,0,0.5);
+}
+p.no-opinion {
+  background-color: rgba(200,200,200,0.5);
+}
+p.liked {
+  background-color: rgba(0,200,0,0.5);
+}
 .form-container {
   display: inline;
 }
@@ -172,6 +187,7 @@ a {
   width: 100%;
   display: block;
   min-height: 40px;
+  text-align: center;
 }
 .form-buttons .ui.button {
   width: 150px;
@@ -232,6 +248,7 @@ a {
 }
 .passage-buttons {
   text-align: center;
+  margin-bottom: 5px;
 }
 .profile-title {
   margin-top: 0;
