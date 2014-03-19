@@ -3,9 +3,10 @@ var googleapis = require('googleapis')
 var bookModel = require('../models/bookModel');
 var async = require('async');
 var aws = require('aws-lib');
+var aws_config = require('../config/aws_config');
 
-var AWS_ACCESS_KEY_ID = 'AKIAIQGTSGUZQ4HBZCKQ';
-var AWS_SECRET_ACCESS_KEY = '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';
+var AWS_ACCESS_KEY_ID = aws_config.key;
+var AWS_SECRET_ACCESS_KEY = aws_config.secret;
 var AWS_ASSOCIATE_TAG = 'bookbox06-20'
 
 var GOOGLE_KEY = 'AIzaSyATWMf3gDHSGQrdOJxf1DxChOMfr2m6Z1g';

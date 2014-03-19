@@ -39,7 +39,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
-  mongoose.connect('mongodb://localhost/bookbox');
+  // mongoose.connect('mongodb://localhost/bookbox');
+}
+
+if (global.process.env.MONGOHQ_URL) {
+	mongoose.connect(global.process.env.MONGOHQ_URL);
+} else {
+	mongoose.connect('mongodb://localhost/bookbox');
 }
 
 app.get('/', function (req,res){
