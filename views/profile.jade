@@ -8,7 +8,8 @@ block content
 			p E-mail:
 			p Sex:
 			p Address Line 1:
-			p Address Line 2:
+			if user.address.address_line_2
+				p Address Line 2:
 			p City, State, ZIP:
 			p Birthdate:
 		.ten.wide.column
@@ -24,22 +25,22 @@ block content
 	h1.profile-title Passage preferences
 	h3 You said you liked:
 	each value, passage in user.passages
-		if value === true
+		if value === '1'
 			p #{passage}
 	h3 You said you didn't like:
 	each value, passage in user.passages
-		if value === false
+		if value === '-1'
 			p #{passage}
 
 	h1.profile-title Celebrity preferences
 	h3 You said you liked:
 	each value, celeb in user.celebs
 		if value === true
-			p #{celeb}
+			p #{celeb.split('_').join(' ')}
 	h3 You said you didn't like:
 	each value, celeb in user.celebs
 		if value === false
-			p #{celeb}
+			p #{celeb.split('_').join(' ')}
 
 block pagescripts
 	script(src="/scripts/profile.js")

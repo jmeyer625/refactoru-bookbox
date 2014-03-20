@@ -126,6 +126,7 @@ module.exports = {
 	showProfile: function(req,res) {
 		userModel.findOne({_id:req.user._id}, function(err,user){
 			if (err) console.log(err);
+			console.log(user)
 			res.render('profile', {
 				user: user
 			});

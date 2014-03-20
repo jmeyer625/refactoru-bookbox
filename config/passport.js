@@ -12,11 +12,15 @@ passport.deserializeUser(function(uid, done){
 	})
 });
 
+var devId = '223555101166538';
+var devSecret = 'b7171b2e71a89c3ba2cfd3c62b6a5e37';
 
+var prodId = '439798682789902'
+var prodSecret = '6f62c823358a37325e3ba83405b7f0f5'
 
 var fbStrategy = new facebookStrategy({
-	clientID: '439798682789902',
-	clientSecret: '6f62c823358a37325e3ba83405b7f0f5',
+	clientID: prodId,
+	clientSecret: prodSecret,
 	callbackURL: 'http://bookbox.herokuapp.com/facebook/callback'
 	//callbackURL: 'http://localhost:3000/facebook/callback'
 
