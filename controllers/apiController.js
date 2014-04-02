@@ -43,7 +43,7 @@ module.exports = {
 					res.send(results);
 			})
 		})
-	},
+	}
 	// getAwsInfo: function (req,res) {
 	// 	bookModel.find({}, function(err,books){
 	// 		var queue = [];

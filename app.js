@@ -66,8 +66,8 @@ app.get('/profile/:id', userController.showProfile);
 app.get('/rated/:id', userController.showRated);
 
 app.get('/filtertest', userController.filter);
-app.get('/amazontest', apiController.testBook);
-app.get('/populateAmazonLinks', apiController.getAwsInfo); 
+//app.get('/amazontest', apiController.testBook);
+//app.get('/populateAmazonLinks', apiController.getAwsInfo); 
 
 app.get('/onboard', userController.onboard);
 app.post('/onboard/submit', userController.createProfile);
